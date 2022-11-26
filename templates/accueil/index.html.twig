@@ -1,20 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/sae301/src/Controller/AccueilController.php'|file_link(0) }}">src/Controller/AccueilController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/sae301/templates/accueil/index.html.twig'|file_link(0) }}">templates/accueil/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="wrapper">
+        <div class="slide--home"><h1>Les évènements près de chez vous</h1></div>
+        <h2>Prochainement</h2>
+        <div class="container--prochainement">
+
+            <div class="tile">
+                <div class="type">Concert</div>
+                <div class="text">
+                    <p>17/03/2023</p>
+                    <h3>Maneskin</h3>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="type">Concert</div>
+                <div class="text">
+                    <p>17/03/2023</p>
+                    <h3>The pretty reckless</h3>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="type">Concert</div>
+                <div class="text">
+                    <p>17/03/2023</p>
+                    <h3>Maneskin</h3>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="type">Cinéma</div>
+                <div class="text">
+                    <p>17/03/2023</p>
+                    <h3>Maneskin</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 {% endblock %}
