@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  margin-top: 50px;
 }
 .wrapper img {
   border-radius: 10px;
@@ -11,12 +12,16 @@
   height: 106px;
 }
 
+@media screen and (min-width: 1100px) {
+  .zone {
+    width: clamp(300px, 70%, 700px);
+  }
+}
 .produit {
   margin-bottom: 50px;
   padding: 20px;
   display: flex;
-  width: 600px;
-  height: 150px;
+  width: 100%;
   background-color: #f2f2f2;
   border-radius: 10px;
   border: 2px solid #000000;
@@ -32,33 +37,45 @@
   color: #484848;
 }
 .produit .right p {
-  line-height: 47px;
   font-size: 1.225rem;
   text-align: end;
 }
 .produit .right p span {
   font-size: 1.225rem;
 }
+.produit .right a {
+  color: black;
+}
+.produit .right a:hover {
+  color: #D80C61;
+}
 .produit .control {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
 }
 .produit .control span {
   margin: 10px;
+  font-weight: bold;
 }
-.produit .control button {
-  cursor: pointer;
-  font-size: 1.5rem;
+.produit .control a {
+  font-size: 2.5rem;
   background: none;
+  height: 20px;
 }
-.produit .moins {
-  margin-bottom: 6px;
+.produit .control a:hover {
+  cursor: pointer;
+  color: #D80C61;
+}
+.produit .control .moins {
+  margin-top: -12px;
+}
+.produit .control .plus {
+  margin-top: -8px;
 }
 
 .produit--info {
-  margin-top: 6px;
   width: 100%;
-  padding: 0 40px;
+  padding: 0 10px 0 30px;
   display: flex;
   justify-content: space-between;
   font-size: 50px;
@@ -80,6 +97,7 @@
   text-align: end;
   justify-content: space-between;
   line-height: 30px;
+  margin-bottom: 15px;
 }
 .entree h4 {
   font-size: 1.325rem;
@@ -112,7 +130,7 @@
   align-items: flex-end;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .wrapper {
     align-items: center;
     flex-direction: column;
