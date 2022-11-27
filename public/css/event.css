@@ -1,0 +1,105 @@
+.wrapper {
+  padding: 0 150px 0 150px;
+  display: flex;
+  margin-top: 80px;
+  gap: 20px;
+}
+
+/*LEFT*/
+.left {
+  width: 55%;
+}
+.left h2 {
+  font-size: 4rem;
+}
+.left .lieu, .left .heure, .left .date {
+  color: #484848;
+  font-size: 1.25rem;
+}
+.left .paragraphe {
+  width: 80%;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  line-height: 180%;
+}
+.left .lieu {
+  font-weight: 200;
+}
+
+/*RIGHT*/
+.right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+.right img {
+  border-radius: 20px;
+  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.control {
+  height: 50px;
+  display: flex;
+}
+.control a {
+  font-size: 4rem;
+  background: none;
+  line-height: 30px;
+}
+.control a:hover {
+  cursor: pointer;
+  color: #D80C61;
+}
+.control span {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 25px;
+}
+.control .plus {
+  margin-top: 8px;
+}
+
+#reserver {
+  background: #FFDF00;
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+  font-size: 1.75rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+#reserver:hover {
+  background: #FFD800;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 0 20px;
+    align-items: center;
+  }
+  .left {
+    width: 100%;
+  }
+  .left h2 {
+    font-size: 2.5rem;
+  }
+  .left .lieu, .left .heure, .left .date {
+    font-size: 1rem;
+  }
+  .left .paragraphe {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .right {
+    width: 100%;
+    align-items: center;
+  }
+  .right img {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=event.css.map */
