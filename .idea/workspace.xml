@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/public/css/panier.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/panier.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/panier.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/panier.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scss/panier.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/panier.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/panier/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/panier/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
