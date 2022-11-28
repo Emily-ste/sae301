@@ -1,0 +1,39 @@
+#navbar {
+  width: 100%;
+}
+
+#navbar--content {
+  width: 100%;
+  height: 100px;
+  padding: 0 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#navbar--content nav ul {
+  display: flex;
+}
+#navbar--content nav ul li {
+  margin: 20px;
+}
+#navbar--content nav ul li a {
+  color: black;
+  font-size: 1.25rem;
+}
+#navbar--content nav ul li a:hover {
+  color: #D80C61;
+}
+
+#logo img {
+  width: 200px;
+}
+
+#picto--nav {
+  display: flex;
+}
+#picto--nav img {
+  margin: 0 15px;
+  width: 35px;
+}
+
+/*# sourceMappingURL=navbar.css.map */

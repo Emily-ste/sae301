@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block navbar %}
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+
+<div id="navbar">
+    <div id="navbar--content">
+        <span id="logo"><a href="{{ path('app_accueil') }}"><img src="{{ asset('svg/logoBlack.svg') }}" alt="logo du site"></a></span>
+
+        <nav>
+            <ul>
+                <li><a href="{{ path('app_evenements') }}">Évènements</a></li>
+                <li><a href="{{ path('app_infos_pratiques') }}">Infos pratiques</a></li>
+                <li><a href="{{ path('app_contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="picto--nav">
+            <a href="#"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>
+            <a href="{{ path('app_panier') }}"><img src="{{ asset('svg/panier.svg') }}" alt="bouton panier"></a>
+            <a href="{{ path('app_connexion') }}"><img src="{{ asset('svg/connexion.svg') }}" alt="bouton de connexion"></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

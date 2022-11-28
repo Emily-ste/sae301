@@ -1,20 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EventController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<link rel="stylesheet" href="{{ asset('css/event.css') }}">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/sae301/src/Controller/EventController.php'|file_link(0) }}">src/Controller/EventController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/sae301/templates/event/index.html.twig'|file_link(0) }}">templates/event/index.html.twig</a></code></li>
-    </ul>
+<div class="wrapper">
+
+    <div class="left">
+        <h2>Daughter</h2>
+        <p class="date">Le 12/04/2023</p>
+        <p class="heure">20h00</p>
+        <p class="lieu">Zenith de Pignon-sur-mer</p>
+        <p class="paragraphe">Daughter est un groupe de shoegazing britannique,
+            originaire de Londres, en Angleterre.
+            Le groupe est formé par la chanteuse Elena Tonra et mêle plusieurs genres musicaux tels que la folk contemporaine,
+            la dream pop et quelques sonorités electro qui donnent un rendu planant.</p>
+    </div>
+
+    <div class="right">
+        <img src="https://via.placeholder.com/400x400" alt="">
+        <div class="control">
+            <a class="moins">-</a>
+            <span>1</span>
+            <a class="plus">+</a>
+        </div>
+        <button id="reserver">Réserver</button>
+    </div>
+
 </div>
 {% endblock %}

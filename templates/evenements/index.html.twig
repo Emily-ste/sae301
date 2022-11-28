@@ -1,23 +1,41 @@
 {% extends 'base.html.twig' %}
-
-{% block title %} Manifestations {% endblock %}
-
-{% block stylesheet %} {{ asset('css/manifestations.css') }} {% endblock %}
-
 {% block body %}
-    <main>
-        <!-- create  -->
 
+<link rel="stylesheet" href="{{ asset('css/evenements.css') }}">
 
-        {% for event in events %}
-            <div class="card" style="background-image: url( {{ asset( event.ManifAffiche  ) }} )">
-                <div class="card-content">
-                    <p>{{ event.ManifTitre }}</p>
-                    <p>{{ event.ManifGenre }}</p>
-                    <p>{{ event.ManifDate }} - {{ event.ManifHoraire }}</p>
-                </div>
+<div class="wrapper">
+    <div class="container">
+        <div class="tile">
+            <div class="type">Concert</div>
+            <div class="text">
+                <p>17/03/2023</p>
+                <h3>Maneskin</h3>
             </div>
-        {% endfor %}
+        </div>
 
-    </main>
+        <div class="tile">
+            <div class="type">Concert</div>
+            <div class="text">
+                <p>17/03/2023</p>
+                <h3>Maneskin</h3>
+            </div>
+        </div>
+
+        <div class="tile">
+            <div class="type">Concert</div>
+            <div class="text">
+                <p>17/03/2023</p>
+                <h3>Maneskin</h3>
+            </div>
+        </div>
+
+        <div class="tile">
+            <div class="type">Concert</div>
+            <div class="text">
+                <p>17/03/2023</p>
+                <h3>Maneskin</h3>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

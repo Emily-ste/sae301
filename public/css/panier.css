@@ -1,0 +1,148 @@
+.wrapper {
+  width: 100%;
+  padding: 0 150px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 50px;
+}
+.wrapper img {
+  border-radius: 10px;
+  width: 106px;
+  height: 106px;
+}
+
+@media screen and (min-width: 1100px) {
+  .zone {
+    width: clamp(300px, 70%, 700px);
+  }
+}
+.produit {
+  margin-bottom: 50px;
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  box-shadow: 7px 7px 50px rgba(0, 0, 0, 0.15);
+}
+.produit h2 {
+  font-size: 2rem;
+}
+.produit .left {
+  margin-right: 10px;
+}
+.produit .left p {
+  color: #484848;
+}
+.produit .right p {
+  font-size: 1.225rem;
+  text-align: end;
+}
+.produit .right p span {
+  font-size: 1.225rem;
+}
+.produit .right a {
+  color: black;
+}
+.produit .right a:hover {
+  color: #D80C61;
+}
+.produit .control {
+  display: flex;
+  justify-content: flex-end;
+}
+.produit .control span {
+  margin: 10px;
+  font-weight: bold;
+}
+.produit .control a {
+  font-size: 2.5rem;
+  background: none;
+  height: 20px;
+}
+.produit .control a:hover {
+  cursor: pointer;
+  color: #D80C61;
+}
+.produit .control .moins {
+  margin-top: -12px;
+}
+.produit .control .plus {
+  margin-top: -8px;
+}
+
+.produit--info {
+  width: 100%;
+  padding: 0 10px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 50px;
+}
+
+.recap {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  box-shadow: 7px 7px 50px rgba(0, 0, 0, 0.15);
+}
+
+.entree {
+  display: flex;
+  text-align: end;
+  justify-content: space-between;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+.entree h4 {
+  font-size: 1.325rem;
+}
+
+.recap--entree {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#valider {
+  background: #FFDF00;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 60px;
+  font-size: 1.75rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+#valider:hover {
+  background: #FFD800;
+}
+
+.wrapper--side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 1100px) {
+  .wrapper {
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  .produit {
+    max-width: 400px;
+  }
+  .produit h2 {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+}
+
+/*# sourceMappingURL=panier.css.map */

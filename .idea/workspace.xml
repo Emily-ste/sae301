@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c64bca0b-ab91-4169-873d-7985738b98e5" name="Changes" comment="">
+    <list default="true" id="bf49eba6-a375-4444-a176-856fb3c78a2f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InfosPratiquesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InfosPratiquesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MentionsLegalesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MentionsLegalesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ValidCommController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ValidCommController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/event.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/event.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/event.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/event.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/event.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/event.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +15,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -165,13 +172,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/svg" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/svg" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/scss" />
     </key>
   </component>
   <component name="RunManager">
