@@ -41,6 +41,9 @@ $gray : #484848;
   align-items: flex-end;
   gap: 20px;
   img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: $shadow;
   }

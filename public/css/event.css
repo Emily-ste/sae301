@@ -35,6 +35,9 @@
   gap: 20px;
 }
 .right img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
 }
