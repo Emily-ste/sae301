@@ -7,18 +7,17 @@
 <div class="wrapper">
 
     <div class="left">
-        <h2>Daughter</h2>
-        <p class="date">Le 12/04/2023</p>
-        <p class="heure">20h00</p>
-        <p class="lieu">Zenith de Pignon-sur-mer</p>
-        <p class="paragraphe">Daughter est un groupe de shoegazing britannique,
-            originaire de Londres, en Angleterre.
-            Le groupe est formé par la chanteuse Elena Tonra et mêle plusieurs genres musicaux tels que la folk contemporaine,
-            la dream pop et quelques sonorités electro qui donnent un rendu planant.</p>
+        <h2> {{ event.manifTitre }} </h2>
+        <p class="date">{{ event.manifDate }}</p>
+        <p class="heure">{{ event.manifHoraire }}</p>
+        <p class="lieu">XX/XX/XXXX</p>
+        <p class="paragraphe">
+            {{ event.manifDescription }}
+        </p>
     </div>
 
     <div class="right">
-        <img src="https://via.placeholder.com/400x400" alt="">
+        <img src="{{ asset(event.manifAffiche) }}" alt="">
         <div class="control">
             <a class="moins">-</a>
             <span>1</span>
