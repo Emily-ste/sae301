@@ -1,20 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EvenementsController!{% endblock %}
+{% block title %} Manifestations {% endblock %}
+
+{% block stylesheet %} {{ asset('css/manifestations.css') }} {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <main>
+        <!-- create  -->
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/sae301/src/Controller/EvenementsController.php'|file_link(0) }}">src/Controller/EvenementsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/sae301/templates/evenements/index.html.twig'|file_link(0) }}">templates/evenements/index.html.twig</a></code></li>
-    </ul>
-</div>
+        {% for event in events %}
+            <div class="card" style="background-image: url( {{ asset( event.ManifAffiche  ) }} )">
+                <div class="card-content">
+                    <p>{{ event.ManifTitre }}</p>
+                    <p>{{ event.ManifGenre }}</p>
+                    <p>{{ event.ManifDate }} - {{ event.ManifHoraire }}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+    </main>
 {% endblock %}
