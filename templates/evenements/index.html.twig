@@ -8,7 +8,7 @@
 
 {% for event in events %}
         <a href="event/{{ event.id }}">
-            <div class="tile" style="background-image: url({{ asset(event.manifAffiche) }}) !important">
+            <div class="tile" style="background-image: url({{ asset(event.manifAffiche) }})">
                 <div class="type">{{ event.ManifGenre }}</div>
                 <div class="text">
                     <p>{{ event.ManifDate }} - {{ event.ManifHoraire }}</p>
