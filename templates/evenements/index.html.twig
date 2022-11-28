@@ -1,43 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% block stylesheet %} {{ asset('css/evenements.css') }} {% endblock %}
 
-    <link rel="stylesheet" href="{{ asset('css/evenements.css') }}">
+<div class="wrapper">
+    <div class="container">
 
-    <div class="wrapper">
-        <div class="container">
+{% for event in events %}
             <div class="tile">
-                <div class="type">Concert</div>
+                <div class="type">{{ event.ManifGenre }}</div>
                 <div class="text">
-                    <p>17/03/2023</p>
-                    <h3>Maneskin</h3>
+                    <p>{{ event.ManifDate }} - {{ event.ManifHoraire }}</p>
+                    <h3>{{ event.ManifTitre }}</h3>
                 </div>
             </div>
-
-            <div class="tile">
-                <div class="type">Concert</div>
-                <div class="text">
-                    <p>17/03/2023</p>
-                    <h3>Maneskin</h3>
-                </div>
-            </div>
-
-            <div class="tile">
-                <div class="type">Concert</div>
-                <div class="text">
-                    <p>17/03/2023</p>
-                    <h3>Maneskin</h3>
-                </div>
-            </div>
-
-            <div class="tile">
-                <div class="type">Concert</div>
-                <div class="text">
-                    <p>17/03/2023</p>
-                    <h3>Maneskin</h3>
-                </div>
-            </div>
-        </div>
+{% endfor %}
     </div>
+</div>
+
 
 {% endblock %}
