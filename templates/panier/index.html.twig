@@ -2,20 +2,76 @@
 {% block stylesheet %} {{ asset('css/panier.css') }} {% endblock %}
 {% block body %}
 
-<div class="wrapper">
-    <input type="hidden" name="liste" id="liste">
+    <script src="{{ asset('script/panier.js') }}"></script>
 
-    <div class="zone" id="zone">
+<div class="wrapper">
+
+    <div class="zone">
+        <div class="produit">
+            <img src="https://via.placeholder.com/150x150" alt="">
+            <div class="produit--info">
+                <div class="left">
+                    <h2>Daughter</h2>
+                    <p>Le 12/07/23</p>
+                    <p>20h00</p>
+                </div>
+
+                <div class="right">
+                    <p><span class="unitaire">20</span>€</p>
+                    <div class="control">
+                        <a class="moins">-</a>
+                        <span>1</span>
+                        <a class="plus">+</a>
+                    </div>
+                    <a href="#">Supprimer</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="produit">
+            <img src="https://via.placeholder.com/150x150" alt="">
+            <div class="produit--info">
+                <div class="left">
+                    <h2>The pretty reckless</h2>
+                    <p>Le 12/07/23</p>
+                    <p>20h00</p>
+                </div>
+
+                <div class="right">
+                    <p><span class="unitaire">20</span>€</p>
+                    <div class="control">
+                        <a class="moins">-</a>
+                        <span>1</span>
+                        <a class="plus">+</a>
+                    </div>
+                    <a href="#">Supprimer</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="wrapper--side" >
-        <div class="recap" id="recap">
+    <div class="wrapper--side">
+        <div class="recap">
+            <div class="entree">
+                <h4>Daughter</h4>
+                <p>Qté : 2<br><span class="prix">44</span>€</p>
+            </div>
+
+            <div class="entree">
+                <h4>Daughter</h4>
+                <p>Qté : 2<br><span class="prix">44</span>€</p>
+            </div>
+
+            <div class="recap--entree">
+                <p>Nombre d'article : 2</p>
+                <p>Total : <span class="total">44</span>€</p>
+            </div>
         </div>
         <form action="finalisation.php" method="post">
+            <input type="hidden" name="liste" class="liste">
             <button id="valider">Valider</button>
         </form>
     </div>
-
 
 </div>
 {% endblock %}
