@@ -1,43 +1,41 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheet %} {{ asset('css/accueil.css') }} {% endblock %}
 {% block body %}
-
-    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
 
     <div class="wrapper">
         <div class="slide--home"><h1>Les évènements près de chez vous</h1></div>
         <h2>Prochainement</h2>
         <div class="container--prochainement">
 
-            <div class="tile">
-                <div class="type">Concert</div>
+            <div class="tile" style="background-image: url({{ asset(events[0].manifAffiche) }})">
+                <div class="type">{{ events[0].manifGenre }}</div>
                 <div class="text">
-                    <p>17/03/2023</p>
-                    <h3>Maneskin</h3>
+                    <p>{{ events[0].manifDate }}</p>
+                    <h3>{{ events[0].manifTitre }}</h3>
                 </div>
             </div>
 
-            <div class="tile">
-                <div class="type">Concert</div>
+            <div class="tile" style="background-image: url({{ asset(events[1].manifAffiche) }})">
+                <div class="type">{{ events[1].manifGenre }}</div>
                 <div class="text">
-                    <p>17/03/2023</p>
-                    <h3>The pretty reckless</h3>
+                    <p>{{ events[1].manifDate }}</p>
+                    <h3>{{ events[1].manifTitre }}</h3>
                 </div>
             </div>
 
-            <div class="tile">
-                <div class="type">Concert</div>
+            <div class="tile" style="background-image: url({{ asset(events[7].manifAffiche) }})">
+                <div class="type">{{ events[7].manifGenre }}</div>
                 <div class="text">
-                    <p>17/03/2023</p>
-                    <h3>Maneskin</h3>
+                    <p>{{ events[7].manifDate }}</p>
+                    <h3>{{ events[7].manifTitre }}</h3>
                 </div>
             </div>
 
-            <div class="tile">
-                <div class="type">Cinéma</div>
+            <div class="tile" style="background-image: url({{ asset(events[13].manifAffiche) }})">
+                <div class="type">{{ events[13].manifGenre }}</div>
                 <div class="text">
-                    <p>17/03/2023</p>
-                    <h3>Maneskin</h3>
+                    <p>{{ events[13].manifDate }}</p>
+                    <h3>{{ events[13].manifTitre }}</h3>
                 </div>
             </div>
 

@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheet %} {{ asset('css/panier.css') }} {% endblock %}
 {% block body %}
-
-    <link rel="stylesheet" href="{{ asset('css/panier.css') }}">
 
 <div class="wrapper">
     <input type="hidden" name="liste" id="liste">
