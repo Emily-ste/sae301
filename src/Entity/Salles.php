@@ -102,4 +102,9 @@ class Salles
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->salle_nom;
+    }
 }
