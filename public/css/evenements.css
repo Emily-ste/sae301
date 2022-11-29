@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 150px 100px;
   margin-bottom: 200px;
 }
 .container a {
@@ -42,8 +42,7 @@
   background-color: black;
   position: absolute;
   width: 250px;
-  height: 110px;
-  bottom: -50px;
+  top: 245px;
   right: -30px;
   color: white;
   padding: 15px;
