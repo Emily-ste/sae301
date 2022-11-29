@@ -1,33 +1,25 @@
 {% extends 'base.html.twig' %}
 {% block navbar %}
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 
-<div id="navbar">
-    <div id="navbar--content">
-        <span id="logo"><a href="{{ path('app_accueil') }}"><img src="{{ asset('svg/logoBlack.svg') }}" alt="logo du site"></a></span>
+    <div id="navbar">
+        <div id="navbar--content">
+            <span id="logo"><a href="{{ path('app_accueil') }}"><img src="{{ asset('svg/logoBlack.svg') }}" alt="logo du site"></a></span>
 
-        <nav>
-            <ul>
-                <li><a href="{{ path('evenements') }}">Évènements</a></li>
-                <li><a href="{{ path('app_infos_pratiques') }}">Infos pratiques</a></li>
-                <li><a href="{{ path('app_contact') }}">Contact</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="{{ path('evenements') }}">Évènements</a></li>
+                    <li><a href="{{ path('app_infos_pratiques') }}">Infos pratiques</a></li>
+                    <li><a href="{{ path('app_contact') }}">Contact</a></li>
+                </ul>
+            </nav>
 
-        <div id="picto--nav">
-            <a href="#"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>
-            
-            <a href="{{ path('app_panier') }}"><img src="{{ asset('svg/panier.svg') }}" alt="bouton panier"></a>
-            {% if app.user %}
-                <a href="{{ path('app_profil') }}"><img src="{{ asset('svg/connexion.svg') }}" alt="bouton de profil"></a>
-                <a href="{{ path('app_logout') }}">Logout</a>
-            {% else %}
-                <a href="{{ path('app_login') }}"><img src="{{ asset('svg/connexion.svg') }}" alt="bouton de profil"></a>
-            {% endif %}
-            {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('admin') }}">Admin</a>
-            {% endif %}
+            <div id="picto--nav">
+                <a href="#"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>
+                <a href="{{ path('app_panier') }}"><img src="{{ asset('svg/panier.svg') }}" alt="bouton panier"><span id='panier'>0</span></a>
+                <a href="{{ path('app_login') }}"><img src="{{ asset('svg/connexion.svg') }}" alt="bouton de connexion"></a>
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
