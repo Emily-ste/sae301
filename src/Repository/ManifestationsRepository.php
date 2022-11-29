@@ -39,6 +39,20 @@ class ManifestationsRepository extends ServiceEntityRepository
         }
     }
 
+
+
+    public function FindManifestationsByName($name)
+    {
+        return $this->createQueryBuilder('m')
+            ->andWhere('m.manif_titre LIKE :name')
+            ->setParameter('name', '%' . $name . '%')
+            /*->andWhere('m.manif_titre = :name')*/
+            /*->setParameter('name', $name)*/
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Manifestations[] Returns an array of Manifestations objects
 //     */
