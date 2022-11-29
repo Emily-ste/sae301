@@ -46,7 +46,7 @@ h2{
 .tile{
   width: 300px;
   height: 300px;
-  background-image: url("https://media.discordapp.net/attachments/177978493944987648/1045638958626910249/unknown.png");
+  /*background-image: url("https://media.discordapp.net/attachments/177978493944987648/1045638958626910249/unknown.png");*/
   background-size: cover;
   position: relative;
   border-radius: 20px;
@@ -68,8 +68,7 @@ h2{
   background-color: black;
   position: absolute;
   width: 250px;
-  height: 110px;
-  bottom: -50px;
+  top: 245px;
   right: -30px;
   color: white;
   padding: 15px;
