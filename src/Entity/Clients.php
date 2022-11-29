@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use App\Repository\ClientsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: ClientsRepository::class)]
-class Clients
+class Clients implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,16 +16,23 @@ class Clients
     private ?int $id = null;
 
     #[ORM\Column(length: 120)]
-    private ?string $client_email = null;
+    private ?string $email = null;
+
+    #[ORM\Column(length: 120)]
+    private ?string $password = null;
+
+    #[ORM\Column]
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     */
 
     #[ORM\Column(length: 100)]
     private ?string $client_nom = null;
 
     #[ORM\Column(length: 120)]
     private ?string $client_prenom = null;
-
-    #[ORM\Column(length: 120)]
-    private ?string $client_password = null;
 
     #[ORM\Column(length: 120)]
     private ?string $client_adr_rue = null;
@@ -39,14 +48,14 @@ class Clients
         return $this->id;
     }
 
-    public function getClientEmail(): ?string
+    public function getEmail(): ?string
     {
-        return $this->client_email;
+        return $this->email;
     }
 
-    public function setClientEmail(string $client_email): self
+    public function setEmail(string $email): self
     {
-        $this->client_email = $client_email;
+        $this->email = $email;
 
         return $this;
     }
@@ -71,18 +80,6 @@ class Clients
     public function setClientPrenom(string $client_prenom): self
     {
         $this->client_prenom = $client_prenom;
-
-        return $this;
-    }
-
-    public function getClientPassword(): ?string
-    {
-        return $this->client_password;
-    }
-
-    public function setClientPassword(string $client_password): self
-    {
-        $this->client_password = $client_password;
 
         return $this;
     }
@@ -121,5 +118,58 @@ class Clients
         $this->client_adr_cp = $client_adr_cp;
 
         return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 }
