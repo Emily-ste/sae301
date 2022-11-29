@@ -37,6 +37,9 @@ class Manifestations
     #[ORM\Column(length: 10)]
     private ?string $manif_horaire = null;
 
+    #[ORM\ManyToOne(inversedBy: 'salle')]
+    private ?Salles $salles = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -134,6 +137,18 @@ class Manifestations
     public function setManifHoraire(string $manif_horaire): self
     {
         $this->manif_horaire = $manif_horaire;
+
+        return $this;
+    }
+
+    public function getSalles(): ?Salles
+    {
+        return $this->salles;
+    }
+
+    public function setSalles(?Salles $salles): self
+    {
+        $this->salles = $salles;
 
         return $this;
     }
