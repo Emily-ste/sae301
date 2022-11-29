@@ -1,4 +1,4 @@
 # sae301
 
-Emily Saint-etienne
-Amir Chaal
+Emily Saint-etienne\
+Amir Chaal\
