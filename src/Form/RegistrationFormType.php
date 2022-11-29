@@ -35,6 +35,11 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('client_nom')
+            ->add('client_prenom')
+            ->add('client_adr_rue')
+            ->add('client_adr_ville')
+            ->add('client_adr_cp')
         ;
     }
 

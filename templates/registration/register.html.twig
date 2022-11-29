@@ -10,6 +10,12 @@
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
+    {{ form_row(registrationForm.client_prenom) }}
+    {{ form_row(registrationForm.client_nom) }}
+    {{ form_row(registrationForm.client_adr_rue) }}
+    {{ form_row(registrationForm.client_adr_cp) }}
+    {{ form_row(registrationForm.client_adr_ville) }}
+
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
