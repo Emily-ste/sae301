@@ -19,7 +19,12 @@
     {% endblock %}
 </head>
 <body>
-{{ block("navbar", "nav_bar/index.html.twig") }}
-{% block body %}{% endblock %}
+    {{ block("navbar", "nav_bar/index.html.twig") }}
+    {% block body %}{% endblock %}
 </body>
+
+{% block script %}
+    <script src="{{ asset('script/scriptpanier.js') }}"></script>
+{% endblock %}
+
 </html>
