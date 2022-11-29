@@ -19,7 +19,7 @@ class SallesCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')->onlyOnIndex(),
             TextField::new('salle_nom'),
             IntegerField::new('salle_capacite'),
             TextField::new('salle_adresse'),
