@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheet %} {{ asset('css/accueil.css') }} {% endblock %}
 {% block body %}
-
-    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
 
     <div class="wrapper">
         <div class="slide--home"><h1>Les évènements près de chez vous</h1></div>
