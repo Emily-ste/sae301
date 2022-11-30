@@ -10,7 +10,7 @@
         <h2 id="article"> {{ event.manifTitre }} </h2>
         <p class="date">{{ event.manifDate }}</p>
         <p class="heure">{{ event.manifHoraire }}</p>
-        <p class="lieu">{{ event.salles }}</p>
+        <p class="lieu"><img src="{{ asset('svg/lieu.svg') }}" alt="icon-lieu" id="lieu">{{ event.salles }}</p>
         <p class="paragraphe">
             {{ event.manifDescription }}
         </p>
