@@ -56,6 +56,16 @@ class ClientsRepository extends ServiceEntityRepository implements PasswordUpgra
         $this->save($clients, true);
     }
 
+    public function findUserById($id)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
 //    /**
 //     * @return Clients[] Returns an array of Clients objects
 //     */

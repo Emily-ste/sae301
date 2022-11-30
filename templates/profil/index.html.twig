@@ -1,20 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfilController!{% endblock %}
-
+{% block stylesheet %} {{ asset('css/profil.css') }} {% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="wrapper">
+    <div class="container" id="infos">
+        <h2>Vos Informations</h2>
+        <div class="data">
+            <p>Email : {{ client.email }}</p>
+            <p>Prénom : {{ client.clientPrenom }}</p>
+            <p>Nom : {{ client.clientNom }}</p>
+        </div>
+        <a href="{{ path('app_client_edit', {'id': client.id}) }}" class="button">Modifier</a>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/sae301/src/Controller/ProfilController.php'|file_link(0) }}">src/Controller/ProfilController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/sae301/templates/profil/index.html.twig'|file_link(0) }}">templates/profil/index.html.twig</a></code></li>
-    </ul>
+    <div class="container" id="adr">
+        <h2>Votre adresse</h2>
+        <div class="data">
+            <p>Adresse : {{ client.clientAdrRue }}</p>
+            <p>Ville : {{ client.ClientAdrVille }}</p>
+            <p>Code postal : {{ client.ClientAdrCp}}</p>
+        </div>
+        <a href="{{ path('app_client_edit_adresse', {'id': client.id}) }}" class="button">Modifier</a>
+    </div>
 </div>
+
 {% endblock %}
