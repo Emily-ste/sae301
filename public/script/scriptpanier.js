@@ -1,10 +1,22 @@
+function recupCookie(nom){
+
+    if(document.cookie.length == 0)return null;
+
+    var cookies = document.cookie.split("; "); //separe chaque parametre contenu dans le cookie
+    cookies.forEach(element => {
+        ligne=element.split("=");
+        if(ligne[0]===nom) sortie =ligne[1]
+        else sortie=null;
+    })
+    return sortie
+}
 //=============================================================================================
 //(GENERAL)
 //document.cookie = '[{"id":"2","article":" Maneskin ","quantite":4,"prix":"55"},{"id":"1","article":" The pretty reckless ","quantite":2,"prix":"56"}]'
 
 //On récupère les cookies pour les mettre dans le tableau JSON montab
-liste = document.cookie
-if (liste.length!==0) {
+liste = recupCookie("panier")
+if (liste!==null) {
     montab = JSON.parse(liste)
     console.log('Panier rempli')
     console.log(montab)
@@ -49,7 +61,7 @@ if (document.getElementById('ajout') !== null) {
         }
 
         //On met à jour les cookies
-        document.cookie = JSON.stringify(montab);
+        document.cookie = "panier="+JSON.stringify(montab)+"; path=/";
         console.log(montab);
     })
 }
@@ -69,8 +81,8 @@ montab.forEach(uneinfo => {
             <div class="produit--info">
                 <div class="left">
                     <h2>${uneinfo.article}</h2>
-                    <p>Le XX/XX/XXXX</p>
-                    <p>xxhxx</p>
+                    <p>Le <span id="date"></span></p>
+                    <p id="horaire"></p>
                 </div>
 
                 <div class="right">
@@ -144,7 +156,7 @@ function clickplus(tag){
         index = montab.findIndex(element => element.id == id); //trouver l'article dans la liste du panier
         montab[index].quantite = parseInt(montab[index].quantite) +1; //incrementer la quantité
 
-        document.cookie = JSON.stringify(montab);  // sauvegarde des infos dans le cookie "liste"
+        document.cookie = "panier="+JSON.stringify(montab)+"; path=/";  // sauvegarde des infos dans le cookie "liste"
         document.getElementById('liste').value=JSON.stringify(montab); // sauver montab pour le formulaire
 
         document.getElementById(id+'b-qte').innerHTML = qte
@@ -183,7 +195,7 @@ function clickmoins(tag){
             document.getElementById(id+"b-prix").innerHTML=total;
         }
 
-        document.cookie = JSON.stringify(montab);  // sauvegarde des infos dans le cookie "liste"
+        document.cookie = "panier="+JSON.stringify(montab)+"; path=/";  // sauvegarde des infos dans le cookie "liste"
         document.getElementById('liste').value=JSON.stringify(montab); // sauver montab pour le formulaire
     })
 }
