@@ -36,4 +36,19 @@
   width: 35px;
 }
 
+#container-panier {
+  position: relative;
+}
+#container-panier span {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 100px;
+  background: #FFDF00;
+}
+
 /*# sourceMappingURL=navbar.css.map */
