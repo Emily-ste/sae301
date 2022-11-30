@@ -81,8 +81,8 @@ montab.forEach(uneinfo => {
             <div class="produit--info">
                 <div class="left">
                     <h2>${uneinfo.article}</h2>
-                    <p>Le XX/XX/XXXX</p>
-                    <p>xxhxx</p>
+                    <p>Le <span id="date"></span></p>
+                    <p id="horaire"></p>
                 </div>
 
                 <div class="right">
