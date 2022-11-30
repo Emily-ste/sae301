@@ -16,8 +16,17 @@
 
             <div id="picto--nav">
                 <a href="#"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>
+
                 <a href="{{ path('app_panier') }}"><img src="{{ asset('svg/panier.svg') }}" alt="bouton panier"><span id='panier'>0</span></a>
-                <a href="{{ path('app_login') }}"><img src="{{ asset('svg/connexion.svg') }}" alt="bouton de connexion"></a>
+                {% if app.user %}
+                    <a href="{{ path('app_profil') }}"><img src="{{ asset('svg/connexion.svg') }}" alt="bouton de profil"></a>
+                    <a href="{{ path('app_logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}"><img src="{{ asset('svg/connexion.svg') }}" alt="bouton de profil"></a>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin') }}">Admin</a>
+                {% endif %}
             </div>
         </div>
     </div>

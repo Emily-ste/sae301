@@ -1,6 +1,6 @@
 //=============================================================================================
 //(GENERAL)
-document.cookie = '[{"id":"2","article":" Maneskin ","quantite":4,"prix":"55"},{"id":"1","article":" The pretty reckless ","quantite":2,"prix":"56"}]'
+//document.cookie = '[{"id":"2","article":" Maneskin ","quantite":4,"prix":"55"},{"id":"1","article":" The pretty reckless ","quantite":2,"prix":"56"}]'
 
 //On récupère les cookies pour les mettre dans le tableau JSON montab
 liste = document.cookie
