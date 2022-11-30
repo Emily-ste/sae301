@@ -17,7 +17,11 @@
             <div id="picto--nav">
                 <a href="#"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>
 
-                <a href="{{ path('app_panier') }}"><img src="{{ asset('svg/panier.svg') }}" alt="bouton panier"><span id='panier'>0</span></a>
+                <a href="{{ path('app_panier') }}" id="container-panier"><img src="{{ asset('svg/panier.svg') }}" alt="bouton panier">
+                    {% if app.request.attributes.get('_route') != 'app_panier' %}
+                        <span id="panier">{{ app.session.get('panier')|length }}</span>
+                    {% endif %}
+                </a>
                 {% if app.user %}
                     <a href="{{ path('app_profil') }}"><img src="{{ asset('svg/connexion.svg') }}" alt="bouton de profil"></a>
                     <a href="{{ path('app_logout') }}">Logout</a>
