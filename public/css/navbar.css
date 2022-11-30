@@ -29,6 +29,7 @@
 }
 
 #picto--nav {
+  position: relative;
   display: flex;
 }
 #picto--nav img {
@@ -49,6 +50,19 @@
   padding: 5px;
   border-radius: 100px;
   background: #FFDF00;
+}
+
+#link {
+  position: absolute;
+  right: 10px;
+  bottom: -35px;
+}
+#link a {
+  color: black;
+  margin: 0 5px;
+}
+#link a:hover {
+  color: #D80C61;
 }
 
 /*# sourceMappingURL=navbar.css.map */

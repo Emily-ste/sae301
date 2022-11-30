@@ -34,6 +34,7 @@ $magenta : #D80C61;
 }
 
 #picto--nav{
+  position: relative;
   display: flex;
   img{
     margin: 0 15px;
@@ -53,5 +54,18 @@ $magenta : #D80C61;
     padding: 5px;
     border-radius: 100px;
     background: #FFDF00;
+  }
+}
+
+#link{
+  position: absolute;
+  right: 10px;
+  bottom: -35px;
+  a{
+    color: black;
+    margin: 0 5px;
+    &:hover{
+      color: $magenta;
+    }
   }
 }
