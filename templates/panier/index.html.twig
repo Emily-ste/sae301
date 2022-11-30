@@ -11,9 +11,16 @@
     <div class="wrapper--side" >
         <div class="recap" id="recap">
         </div>
-        <form action="finalisation.php" method="post">
-            <button id="valider">Valider</button>
-        </form>
+
+        {% if app.user %}
+            <form action="valid-comm" method="post">
+                <button id="valider">Valider</button>
+            </form>
+        {% else %}
+            <form action="login" method="post">
+                <button id="valider">Valider</button>
+            </form>
+        {% endif %}
     </div>
 
 
