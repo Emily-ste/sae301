@@ -77,6 +77,10 @@
   background: #FFD800;
 }
 
+#lieu {
+  height: 20px;
+}
+
 .prix {
   font-size: 2rem;
   font-weight: bold;
