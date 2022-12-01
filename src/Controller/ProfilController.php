@@ -26,7 +26,7 @@ class ProfilController extends AbstractController
     }
 
     #[Route('/profil/edit', name: 'app_client_edit')]
-    public function edit(ClientsRepository $clientsRepository, Request $request): Response
+    public function edit(ManagerRegistry $doctrine, ClientsRepository $clientsRepository, Request $request): Response
     {
         //get id of current user
         $id = $this->getUser()->getId();
@@ -39,6 +39,14 @@ class ProfilController extends AbstractController
         $form->remove('client_adr_cp');
         $form = $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $client = $form->getData();
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($client);
+            $entityManager->flush();
+            return $this->redirectToRoute('app_profil');
+        }
+
         return $this->render('profil/client_edit.html.twig', [
             'form' => $form->createView(),
         ]);
@@ -46,7 +54,7 @@ class ProfilController extends AbstractController
 
     //edit adresse
     #[Route('/profil/edit/adresse', name: 'app_client_edit_adresse')]
-    public function editAdresse(ClientsRepository $clientsRepository, Request $request): Response
+    public function editAdresse(ManagerRegistry $doctrine, ClientsRepository $clientsRepository, Request $request): Response
     {
         //get id of current user
         $id = $this->getUser()->getId();
@@ -58,6 +66,15 @@ class ProfilController extends AbstractController
         $form->remove('client_nom');
         $form->remove('client_prenom');
         $form = $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $client = $form->getData();
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($client);
+            $entityManager->flush();
+            return $this->redirectToRoute('app_profil');
+        }
 
         return $this->render('profil/client_edit_adresse.html.twig', [
             'form' => $form->createView(),
