@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FooterController!{% endblock %}
+
+{% block footer %}
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+
+<div class="footer-container">
+    <div class="renseigner">
+        <p>Restez informés :</p>
+        <input type="text" placeholder="Veuillez renseigner votre e-mail">
+    </div>
+    <div class="footer">
+        <div class="haut">
+            <div class="gauche">
+                <img src="{{ asset('svg/logoWhite.svg') }}" alt="">
+                <div class="rejoignez">
+                    <p>rejoignez-nous :</p>
+                    <div class="reseaux">
+                        <a href="https://www.facebook.com/"><img src="{{ asset('svg/facebook.svg') }}" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="{{ asset('svg/instagram.svg') }}" alt=""></a>
+                        <a href="https://twitter.com/"><img src="{{ asset('svg/twitter.svg') }}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <right class="droite">
+            <p>Evenements</p>
+            <p>Infos pratiques</p>
+            <p>Infos pratiques</p>
+            <p>Contact</p>
+            <p>Mentions légales</p>
+            <p>Mon compte</p>
+            </right>
+        </div>
+
+        <div class="bas">
+            <p>Pignon-sur-mer© 2020 - Tous droits réservés</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

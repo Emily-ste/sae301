@@ -19,7 +19,7 @@ class ClientType extends AbstractType
             ->add('client_adr_rue')
             ->add('client_adr_ville')
             ->add('client_adr_cp')
-            ->add('Sauvegarder', SubmitType::class)
+            ->add('sauvegarder', SubmitType::class)
         ;
     }
 
