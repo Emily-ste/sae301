@@ -18,7 +18,7 @@
 }
 #navbar--content nav ul li a {
   color: black;
-  font-size: 1.25rem;
+  font-size: clamp(1.2rem, 1.7vw, 2rem);
 }
 #navbar--content nav ul li a:hover {
   color: #D80C61;

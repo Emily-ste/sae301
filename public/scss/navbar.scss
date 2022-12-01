@@ -18,7 +18,7 @@ $magenta : #D80C61;
       margin: 20px;
       a{
         color: black;
-        font-size: 1.25rem;
+        font-size: clamp(1.2rem, 1.7vw, 2rem);
         &:hover{
           color: $magenta;
         }

@@ -109,6 +109,9 @@ input:focus {
   .edit {
     width: 400px;
   }
+  #infos {
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=profil.css.map */
