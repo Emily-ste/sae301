@@ -93,8 +93,11 @@ $magenta : #D80C61;
         justify-self: end;
     }
 
-    #nav{
-        grid-column: 1/-1;
+    nav{
+        grid-column: 1/3;
         grid-row: 2/3;
+      li{
+        margin: 15px !important;
+      }
     }
 }
