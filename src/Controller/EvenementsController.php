@@ -22,4 +22,14 @@ class EvenementsController extends AbstractController
             'events' => $events
         ]);
     }
+
+    #[Route("/evenements/{name}", name:"evenements_name")]
+    public function eventsName($name, EntityManagerInterface $entityManager, ManifestationsRepository $ManifestationsRepository)
+    {
+        $events = $ManifestationsRepository->FindManifestationsByName($name);
+
+        return $this->render('evenements/index.html.twig', [
+            'events' => $events
+        ]);
+    }
 }
