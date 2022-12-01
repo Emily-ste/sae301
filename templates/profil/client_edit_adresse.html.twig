@@ -3,10 +3,15 @@
 {% block stylesheet %} {{ asset('css/profil.css') }} {% endblock %}
 {% block body %}
 
-<div class="wrapper">
-    <div class="container">
-        {{ form(form) }}
+    <div class="wrapper">
+    <div class="container edit">
+        <h2>Editez votre adresse</h2>
+        {{ form_start(form) }}
+        <label>Rue&nbsp:&nbsp</label> <br> {{ form_widget(form.client_adr_rue) }}
+        <label>Code postal&nbsp:&nbsp</label> <br> {{ form_widget(form.client_adr_cp) }}
+        <label>Ville&nbsp:&nbsp</label><br> {{ form_widget(form.client_adr_ville) }}
+        {{ form_widget(form.sauvegarder) }}
+        {{ form_end(form) }}
     </div>
-</div>
 
 {% endblock %}
