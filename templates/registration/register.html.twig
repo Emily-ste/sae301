@@ -2,8 +2,12 @@
 
 {% block title %}Register{% endblock %}
 
+{% block stylesheet %} {{ asset('css/login.css') }} {% endblock %}
 {% block body %}
-    <h1>Register</h1>
+
+<div class="wrapper">
+    <div class="container">
+    <h2>S'inscrire</h2>
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
@@ -17,6 +21,8 @@
     {{ form_row(registrationForm.client_adr_ville) }}
 
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="button">S'inscrire</button>
     {{ form_end(registrationForm) }}
+    </div>
+</div>
 {% endblock %}
