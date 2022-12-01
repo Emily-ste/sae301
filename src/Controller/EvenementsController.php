@@ -2,12 +2,14 @@
 
 namespace App\Controller;
 
-use App\Repository\ManifestationsRepository;
-use Doctrine\ORM\EntityManagerInterface;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ManifestationsRepository;
+use Doctrine\ORM\EntityManagerInterface;
+
+
+
 
 class EvenementsController extends AbstractController
 {

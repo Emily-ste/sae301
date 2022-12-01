@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .slide--home {
@@ -38,6 +38,9 @@ h2 {
   flex-wrap: wrap;
   gap: 200px;
   margin-bottom: 200px;
+}
+.container--prochainement a {
+  color: black;
 }
 
 .tile {
@@ -76,7 +79,8 @@ h2 {
   font-size: 1.5rem;
 }
 .text p {
-  font-size: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: lighter;
 }
 
 @media screen and (max-width: 1000px) {

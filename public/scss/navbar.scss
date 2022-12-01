@@ -34,9 +34,70 @@ $magenta : #D80C61;
 }
 
 #picto--nav{
+  position: relative;
   display: flex;
   img{
     margin: 0 15px;
     width: 35px;
   }
+}
+
+#container-panier{
+  position: relative;
+  span{
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 100px;
+    background: #FFDF00;
+  }
+}
+
+#link{
+  position: absolute;
+  right: 10px;
+  bottom: -35px;
+  a{
+    color: black;
+    margin: 0 5px;
+    &:hover{
+      color: $magenta;
+    }
+  }
+}
+
+//responsive navbar
+@media screen and (max-width: 1024px){
+  #navbar--content{
+    padding: 0 20px;
+  }
+  #navbar--content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80px 80px;
+  }
+    #logo{
+        grid-column: 1/2;
+        grid-row: 1/2;
+      img{
+        width: 150px;
+      }
+    }
+    #picto--nav{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        justify-self: end;
+    }
+
+    nav{
+        grid-column: 1/3;
+        grid-row: 2/3;
+      li{
+        margin: 15px !important;
+      }
+    }
 }

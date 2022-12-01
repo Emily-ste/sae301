@@ -71,7 +71,7 @@ $gray : #484848;
   }
 }
 
-#reserver{
+#ajout{
   background: #FFDF00;
   border-radius: 10px;
   width: 200px;
@@ -81,6 +81,30 @@ $gray : #484848;
   cursor: pointer;
   &:hover{
     background: #FFD800;
+  }
+}
+
+#lieu{
+  height: 18px;
+  margin-right: 5px;
+}
+
+.prix{
+    font-size: 2rem;
+    font-weight: bold;
+    color: $gray;
+    span{
+      margin: 5px;
+    }
+}
+
+#qte{
+  font-size: 1.5rem;
+  margin: 0 20px;
+  border: solid 2px black;
+  border-radius: 10px;
+  &:hover{
+    cursor: pointer;
   }
 }
 
