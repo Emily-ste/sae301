@@ -100,4 +100,15 @@ input:focus {
   width: 100%;
 }
 
+.edit {
+  width: 600px;
+  display: block;
+}
+
+@media screen and (max-width: 1200px) {
+  .edit {
+    width: 400px;
+  }
+}
+
 /*# sourceMappingURL=profil.css.map */

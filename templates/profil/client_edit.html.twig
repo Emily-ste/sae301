@@ -4,8 +4,9 @@
 {% block body %}
 
 <div class="wrapper">
-    <div class="container" style="width: 400px">
+    <div class="container edit">
         <h2>Editez vos informations</h2>
+        {{ form_start(form) }}
         <div class="prenom-nom">
             <div>
                 <label>Prénom&nbsp:&nbsp</label> <br> {{ form_widget(form.client_prenom) }}
@@ -16,6 +17,7 @@
         </div>
         <div id="email"><label>Email&nbsp:&nbsp</label><br> {{ form_widget(form.email) }}</div>
         {{ form_widget(form.sauvegarder) }}
+        {{ form_end(form) }}
 </div>
 
 {% endblock %}
