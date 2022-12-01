@@ -27,6 +27,42 @@
             </div>
             <a href="{{ path('app_client_edit_adresse', {'id': client.id}) }}" class="button">Modifier</a>
         </div>
+
+        <div class="container">
+            <h2>Vos commandes</h2>
+            <div class="data">
+                <div class="commande">
+                    <a href="#">
+                        <p href="">Commande 1</p>
+                        <div class="control">
+                            <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt=""></a>
+                            <a href="#"><img src="{{ asset('svg/file.svg') }}" alt=""></a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="commande">
+                    <a href="#">
+                        <p href="">Commande 1</p>
+                        <div class="control">
+                            <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt=""></a>
+                            <a href="#"><img src="{{ asset('svg/file.svg') }}" alt=""></a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="commande">
+                    <a href="#">
+                        <p href="">Commande 1</p>
+                        <div class="control">
+                            <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt=""></a>
+                            <a href="#"><img src="{{ asset('svg/file.svg') }}" alt=""></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <a href="{{ path('app_client_commandes') }}" class="button">Voir plus</a>
+        </div>
     </div>
 </div>
 

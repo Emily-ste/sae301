@@ -40,6 +40,23 @@ h1 {
   width: 100%;
 }
 
+.commande {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.commande p {
+  color: black;
+}
+.commande p:hover {
+  color: #D80C61;
+}
+
+.control img {
+  margin: 0 4px;
+  width: 18px;
+}
+
 .button {
   background: #FFDF00;
   border-radius: 10px;

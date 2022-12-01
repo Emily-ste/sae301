@@ -64,5 +64,18 @@ class ProfilController extends AbstractController
         ]);
     }
 
+    //voir commandes
+    #[Route('/profil/commandes', name: 'app_client_commandes')]
+    public function commandes(ClientsRepository $clientsRepository): Response
+    {
+        //get id of current user
+        $id = $this->getUser()->getId();
+        $client = $clientsRepository->findUserById($id);
+
+        return $this->render('profil/client_commandes.html.twig', [
+            'client' => $client,
+        ]);
+    }
+
 
 }

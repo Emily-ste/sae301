@@ -43,6 +43,23 @@ h1{
   }
 }
 
+.commande{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  p{
+    color: black;
+    &:hover{
+      color: $magenta;
+    }
+  }
+}
+
+.control img{
+  margin: 0 4px;
+  width: 18px;
+}
+
 .button{
   background: #FFDF00;
   border-radius: 10px;
