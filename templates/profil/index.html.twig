@@ -4,24 +4,29 @@
 {% block body %}
 
 <div class="wrapper">
-    <div class="container" id="infos">
-        <h2>Vos Informations</h2>
-        <div class="data">
-            <p>Email : {{ client.email }}</p>
-            <p>Prénom : {{ client.clientPrenom }}</p>
-            <p>Nom : {{ client.clientNom }}</p>
-        </div>
-        <a href="{{ path('app_client_edit', {'id': client.id}) }}" class="button">Modifier</a>
-    </div>
 
-    <div class="container" id="adr">
-        <h2>Votre adresse</h2>
-        <div class="data">
-            <p>Adresse : {{ client.clientAdrRue }}</p>
-            <p>Ville : {{ client.ClientAdrVille }}</p>
-            <p>Code postal : {{ client.ClientAdrCp}}</p>
+    <h1>Bonjour {{ client.clientPrenom }} {{ client.clientNom }}</h1>
+
+    <div id="infos">
+        <div class="container" id="info">
+            <h2>Vos Informations</h2>
+            <div class="data">
+                <p>Email : {{ client.email }}</p>
+                <p>Prénom : {{ client.clientPrenom }}</p>
+                <p>Nom : {{ client.clientNom }}</p>
+            </div>
+            <a href="{{ path('app_client_edit', {'id': client.id}) }}" class="button">Modifier</a>
         </div>
-        <a href="{{ path('app_client_edit_adresse', {'id': client.id}) }}" class="button">Modifier</a>
+
+        <div class="container" id="adr">
+            <h2>Votre adresse</h2>
+            <div class="data">
+                <p>Adresse : {{ client.clientAdrRue }}</p>
+                <p>Ville : {{ client.ClientAdrVille }}</p>
+                <p>Code postal : {{ client.ClientAdrCp}}</p>
+            </div>
+            <a href="{{ path('app_client_edit_adresse', {'id': client.id}) }}" class="button">Modifier</a>
+        </div>
     </div>
 </div>
 

@@ -2,9 +2,20 @@
   width: 100%;
   padding: 0 150px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 50px;
   margin-top: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+#infos {
+  display: flex;
+  gap: 50px;
 }
 
 .container {
