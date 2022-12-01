@@ -1,7 +1,21 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheet %} {{ asset('css/profil.css') }} {% endblock %}
 {% block body %}
 
-    {{ form(form) }}
+<div class="wrapper">
+    <div class="container" style="width: 400px">
+        <h2>Editez vos informations</h2>
+        <div class="prenom-nom">
+            <div>
+                <label>Prénom&nbsp:&nbsp</label> <br> {{ form_widget(form.client_prenom) }}
+            </div>
+            <div>
+                <label>Nom&nbsp:&nbsp</label> <br> {{ form_widget(form.client_nom) }}
+            </div>
+        </div>
+        <div id="email"><label>Email&nbsp:&nbsp</label><br> {{ form_widget(form.email) }}</div>
+        {{ form_widget(form.sauvegarder) }}
+</div>
 
 {% endblock %}

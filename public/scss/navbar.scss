@@ -69,3 +69,35 @@ $magenta : #D80C61;
     }
   }
 }
+
+//responsive navbar
+@media screen and (max-width: 1024px){
+  #navbar--content{
+    padding: 0 20px;
+  }
+  #navbar--content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80px 80px;
+  }
+    #logo{
+        grid-column: 1/2;
+        grid-row: 1/2;
+      img{
+        width: 150px;
+      }
+    }
+    #picto--nav{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        justify-self: end;
+    }
+
+    nav{
+        grid-column: 1/3;
+        grid-row: 2/3;
+      li{
+        margin: 15px !important;
+      }
+    }
+}
