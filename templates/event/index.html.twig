@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}{{ event.manifTitre }}{% endblock %}
 {% block stylesheet %} {{ asset('css/event.css') }} {% endblock %}
+
 {% block body %}
 
 <div class="wrapper">
