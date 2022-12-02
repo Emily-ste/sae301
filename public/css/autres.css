@@ -6,6 +6,28 @@
   margin-top: 150px;
 }
 
+.container {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  box-shadow: 7px 7px 50px rgba(0, 0, 0, 0.15);
+}
+.container h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.container .data {
+  width: 100%;
+}
+
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -29,7 +51,7 @@ h1 {
   align-items: center;
 }
 
-#ici {
+#ici, button {
   margin-top: 10px;
   background: #FFDF00;
   border-radius: 10px;
@@ -43,7 +65,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-#ici:hover {
+#ici:hover, button:hover {
   background: #FFD800;
 }
 
@@ -51,6 +73,21 @@ h3 {
   font-weight: bold;
   font-size: 1.2rem;
   margin: 10px 0;
+}
+
+input, textarea {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+}
+input:focus, textarea:focus {
+  border: 2px solid #FFDF00;
+  outline: none;
+}
+
+textarea {
+  height: 100px;
 }
 
 @media screen and (max-width: 768px) {
