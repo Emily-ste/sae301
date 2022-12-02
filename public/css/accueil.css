@@ -8,10 +8,10 @@
 
 .slide--home {
   width: 100%;
-  background-image: url("https://media.discordapp.net/attachments/177978493944987648/1045647265483730965/unknown.png?width=1758&height=1171");
+  background-image: url("../img/home.webp");
   height: 350px;
   background-size: cover;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.35);
   position: relative;
 }
@@ -22,7 +22,7 @@
   font-size: 3.5rem;
   color: white;
   font-weight: bold;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
