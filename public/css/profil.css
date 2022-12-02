@@ -105,6 +105,10 @@ input:focus {
   display: block;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 1200px) {
   .edit {
     width: 400px;
