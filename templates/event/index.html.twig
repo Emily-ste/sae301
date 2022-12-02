@@ -38,7 +38,9 @@
             </select>
             <p class="prix"><span id="prix">{{ event.manifPrix }}</span>€</p>
         </div>
-        <button id="ajout">Réserver</button>
+        <form action="{{ path('app_panier') }}">
+            <button type="submit" id="ajout">Réserver</button>
+        </form>
 
     </div>
 
