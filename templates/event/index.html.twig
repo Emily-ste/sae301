@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ event.manifTitre }}{% endblock %}
+{% block meta %}<meta name="robots" content="index,nofollow"/>{% endblock %}
 {% block stylesheet %} {{ asset('css/event.css') }} {% endblock %}
 
 {% block body %}
