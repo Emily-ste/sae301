@@ -13,9 +13,9 @@
         <div class="container" id="info">
             <h2>Vos Informations</h2>
             <div class="data">
-                <p>Email : {{ client.email }}</p>
-                <p>Prénom : {{ client.clientPrenom }}</p>
-                <p>Nom : {{ client.clientNom }}</p>
+                <p><span class="bold">Email : </span>{{ client.email }}</p>
+                <p><span class="bold">Prénom : </span>{{ client.clientPrenom }}</p>
+                <p><span class="bold">Nom : </span>{{ client.clientNom }}</p>
             </div>
             <a href="{{ path('app_client_edit', {'id': client.id}) }}" class="button">Modifier</a>
         </div>
@@ -23,9 +23,9 @@
         <div class="container" id="adr">
             <h2>Votre adresse</h2>
             <div class="data">
-                <p>Adresse : {{ client.clientAdrRue }}</p>
-                <p>Ville : {{ client.ClientAdrVille }}</p>
-                <p>Code postal : {{ client.ClientAdrCp}}</p>
+                <p><span class="bold">Adresse : </span>{{ client.clientAdrRue }}</p>
+                <p><span class="bold">Ville : </span>{{ client.ClientAdrVille }}</p>
+                <p><span class="bold">Code postal : </span>{{ client.ClientAdrCp}}</p>
             </div>
             <a href="{{ path('app_client_edit_adresse', {'id': client.id}) }}" class="button">Modifier</a>
         </div>
@@ -45,7 +45,7 @@
 
                 <div class="commande">
                     <a href="#">
-                        <p href="">Commande 1</p>
+                        <p href="">Commande 2</p>
                         <div class="control">
                             <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt="Voir commande"></a>
                             <a href="#"><img src="{{ asset('svg/file.svg') }}" alt="Voir billet"></a>
@@ -55,7 +55,7 @@
 
                 <div class="commande">
                     <a href="#">
-                        <p href="">Commande 1</p>
+                        <p href="">Commande 3</p>
                         <div class="control">
                             <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt="Voir commande"></a>
                             <a href="#"><img src="{{ asset('svg/file.svg') }}" alt="Voir billet"></a>

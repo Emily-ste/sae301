@@ -1,21 +1,9 @@
 .wrapper {
-  width: 100%;
-  padding: 0 150px;
+  padding: 0 150px 0 150px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 50px;
-  margin-top: 50px;
-}
-
-h1 {
-  font-size: 3rem;
-}
-
-#infos {
-  display: flex;
-  gap: 50px;
+  margin-top: 150px;
 }
 
 .container {
@@ -24,7 +12,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: center;
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #000000;
@@ -40,27 +28,33 @@ h1 {
   width: 100%;
 }
 
-.commande {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bolder;
 }
-.commande p {
-  color: black;
+
+.info, .intro {
+  margin-bottom: 70px;
+  width: 60%;
+  line-height: 200%;
+  font-size: 1.115rem;
 }
-.commande p:hover {
+.info h2, .intro h2 {
   color: #D80C61;
+  font-size: 1.5rem;
 }
 
-.control img {
-  margin: 0 4px;
-  width: 18px;
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.button, #client_sauvegarder {
+#ici, button {
+  margin-top: 10px;
   background: #FFDF00;
   border-radius: 10px;
-  margin-top: 20px;
   width: 130px;
   height: 40px;
   font-size: 1rem;
@@ -71,51 +65,38 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.button:hover, #client_sauvegarder:hover {
+#ici:hover, button:hover {
   background: #FFD800;
 }
 
-.prenom-nom {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-}
-.prenom-nom div {
-  width: 50%;
+h3 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
-input {
+input, textarea {
   border: 2px solid black;
   border-radius: 10px;
   padding: 5px;
   width: 100%;
 }
-input:focus {
+input:focus, textarea:focus {
   border: 2px solid #FFDF00;
   outline: none;
 }
 
-#email {
-  margin-top: 15px;
-  width: 100%;
+textarea {
+  height: 100px;
 }
 
-.edit {
-  width: 600px;
-  display: block;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-@media screen and (max-width: 1200px) {
-  .edit {
-    width: 400px;
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 50px 0 50px;
   }
-  #infos {
-    flex-direction: column;
+  .info, .intro {
+    width: 100%;
   }
 }
 
-/*# sourceMappingURL=profil.css.map */
+/*# sourceMappingURL=autres.css.map */
