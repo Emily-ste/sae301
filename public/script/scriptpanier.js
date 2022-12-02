@@ -77,7 +77,7 @@ var nbtotal=0
 montab.forEach(uneinfo => {
      //htmlA
     htmlA = `<div class="produit" id="${uneinfo.id}">
-        <img src="https://via.placeholder.com/150x150" alt="">
+        <img src="https://via.placeholder.com/150x150" alt="Image de l'évènement">
             <div class="produit--info">
                 <div class="left">
                     <h2>${uneinfo.article}</h2>
