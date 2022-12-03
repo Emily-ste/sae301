@@ -1,36 +1,53 @@
-.show2{transform: translate(-50%, -50%) !important;}
-.show{display: block !important;}
-.dark{filter: brightness(50%) !important;}
-.error{background-color: rgb(255, 187, 187);}
-body, html{
+.show2 {
+  transform: translate(-50%, -50%) !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.dark {
+  filter: brightness(50%) !important;
+}
+
+.error {
+  background-color: rgb(255, 187, 187);
+}
+
+body, html {
   height: 100%;
   width: 100%;
 }
-.cote{
+
+.cote {
   justify-content: space-between;
   display: flex;
 }
-.sub{
+
+.sub {
   width: 48%;
 }
-label{
+
+label {
   width: 100%;
   margin: 0px 0px 5px 0px;
   font-size: 1.1em;
   display: block;
 }
-#veil{
+
+#veil {
   transition: 0.5s;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
   display: none;
 }
-#popup{
+
+#popup {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,7 +68,15 @@ label{
   transform: translate(-50%, 300%);
   filter: brightness(100%);
 }
-#popup a{
+
+@media screen and (max-width: 600px) {
+  #popup {
+    width: 90%;
+    height: 50vh;
+  }
+}
+
+#popup a {
   font-size: 25px;
   font-weight: 600;
   padding: 10px 20px;
@@ -63,29 +88,35 @@ label{
   display: inline;
   width: 50%;
 }
-#popup a:first-child{
+
+#popup a:first-child {
   background: white;
   color: black;
-    border: solid 2px black;
+  border: solid 2px black;
 }
-#popup h1{
-    font-size: 2em;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+
+#popup h1 {
+  font-size: 2em;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
-#popup > div{
+
+#popup > div {
   justify-content: space-around;
   display: flex;
   width: 100%;
 }
-#cb{
+
+#cb {
   display: none;
 }
-#paypal{
+
+#paypal {
   margin-top: 30px;
   display: none;
 }
+
 .suite {
   width: 300px;
   margin-top: 25px;
@@ -98,11 +129,12 @@ label{
   border-radius: 7px;
 }
 
-.paypal:hover{
+.paypal:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
-.paypal{
+
+.paypal {
   transition: 0.2s;
   border: 2px solid black;
   background-color: white;
@@ -110,53 +142,67 @@ label{
   width: 280px !important;
   height: auto !important;
 }
-.inline{
-  display : inline;
+
+.inline {
+  display: inline;
 }
-.tunnel{
-  width: 500px
-}
-.b{
+
+/*.tunnel{
+    width: 500px
+}*/
+.b {
   width: 5px !important;
 }
-.demi{
-    width : 96%;
+
+.demi {
+  width: 96%;
 }
-.full{
-    width : 100%;
+
+.full {
+  width: 100%;
 }
-.tunnel a:hover, #popup a:hover{
+
+.tunnel a:hover, #popup a:hover {
   cursor: pointer;
 }
-.tunnel h1{
+
+.tunnel h1 {
   margin-bottom: -30px;
   font-size: 40px;
 }
-.tunnel h2{
+
+.tunnel h2 {
   font-size: 22px;
   margin-bottom: 10px;
   margin-top: 50px;
 }
-#popup h2{
+
+#popup h2 {
   text-align: center;
   font-size: 22px;
   margin-bottom: 10px;
 }
-.tunnel .etape1{
+
+.tunnel .etape1 {
   width: 100%;
   padding: 20px;
   border-radius: 12px;
   background-color: rgb(255, 237, 199);
   margin: 0 0 20px 0;
 }
+
 .tunnel p {
   font-size: 22px;
 }
-.etape1 p:not(:last-child){
+.tunnel p input {
+  margin: 0 5px;
+}
+
+.etape1 p:not(:last-child) {
   margin-bottom: 15px;
 }
 
-.champ{
+.champ {
   margin-bottom: 20px;
   font-size: 20px;
   color: black;
@@ -165,12 +211,18 @@ label{
   border-radius: 6px;
   border: solid 2px black;
 }
-.no-margin-bottom{
+.champ:focus {
+  outline: none;
+  border: solid 2px #FFDF00;
+}
+
+.no-margin-bottom {
   margin-bottom: 0px;
 }
-.no-margin-right{
-   margin-right: 0px;
- }
+
+.no-margin-right {
+  margin-right: 0px;
+}
 
 .wrapper {
   width: 100%;
@@ -180,26 +232,6 @@ label{
   gap: 50px;
   margin-top: 50px;
 }
-.wrapper-vide{
-  flex-direction: column;
-  text-align: center;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.wrapper-vide p {
-  font-size: 50px;
-  font-weight: 600;
-}
-.wrapper-vide a {
-  font-size: 25px;
-  font-weight: 600;
-  padding: 10px 20px;
-  background-color: #D80C61;
-  color: white;
-  border-radius: 7px;
-}
 .wrapper img {
   border-radius: 10px;
   width: 106px;
@@ -208,7 +240,7 @@ label{
 
 @media screen and (min-width: 1100px) {
   .zone {
-    width: clamp(300px, 70%, 700px);
+    width: clamp(200px, 70%, 700px);
   }
 }
 .produit {

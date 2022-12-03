@@ -1,17 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheet %} {{ asset('css/panier.css') }} {% endblock %}
+{% block stylesheet %}
+    {{ asset('css/panier.css') }}
+{% endblock %}
+
 {% block body %}
-    <div id="popup">
-        <h1>Confirmez-vous les informations saisies ?</h1>
-        <div>
-            <a class="retour">Pas encore...</a>
-            <a>Passer la commande</a>
-        </div>
-    </div>
-    <div id="veil"></div>
 
     <div class="wrapper">
+        <div id="popup">
+            <h1>Confirmez-vous les informations saisies ?</h1>
+            <div>
+                <a class="retour">Pas encore...</a>
+                <a>Passer la commande</a>
+            </div>
+        </div>
+        <div id="veil"></div>
         <input type="hidden" name="liste" id="liste">
 
         <div class="zone tunnel" id="zoneb">
@@ -91,16 +94,6 @@
         <div class="wrapper--side" >
             <div class="recap" id="recap">
             </div>
-
-            {% if app.user %}
-                <form action="valid-comm" method="post">
-                    <button id="valider">Valider</button>
-                </form>
-            {% else %}
-                <form action="login" method="post">
-                    <button id="valider">Valider</button>
-                </form>
-            {% endif %}
         </div>
     </div>
 {% endblock %}
