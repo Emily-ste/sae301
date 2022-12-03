@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Clients;
 use App\Entity\Manifestations;
 use App\Entity\Salles;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -29,5 +30,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Manifesations', 'fas fa-list', Manifestations::class);
         yield MenuItem::linkToCrud('Salles', 'fas fa-list', Salles::class);
+        yield MenuItem::linkToCrud('Clients', 'fas fa-list', Clients::class);
+
     }
 }

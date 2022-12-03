@@ -7,8 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ManifestationsCrudController extends AbstractCrudController
@@ -24,11 +24,15 @@ class ManifestationsCrudController extends AbstractCrudController
         return [
             IdField::new('id')->onlyOnIndex(),
             TextField::new('manif_titre'),
-            TextEditorField::new('manif_description')->onlyOnForms(),
-            TextEditorField::new('manif_casting')->onlyOnForms(),
+            TextField::new('manif_description')->onlyOnForms(),
+            TextField::new('manif_casting')->onlyOnForms(),
             TextField::new('manif_genre'),
             IntegerField::new('manif_prix'),
-            TextField::new('manif_affiche')->onlyOnForms(),
+            ImageField::new('manif_affiche')
+                ->setBasePath('img/affiches')
+                ->setUploadDir('public/img/affiches')
+                ->setUploadedFileNamePattern('img/affiches/[year]-[month]-[day]-[slug].[extension]')
+                ->onlyOnForms(),
             TextField::new('manif_date')->onlyOnForms(),
             TextField::new('manif_horaire')->onlyOnForms(),
             AssociationField::new('salles', 'Salle')
