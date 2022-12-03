@@ -108,6 +108,22 @@ $gray : #484848;
   }
 }
 
+#back{
+  position: absolute;
+  margin-top: 20px;
+  font-size: 1.25rem;
+  color: black;
+  top: 130px;
+  &:hover{
+      cursor: pointer;
+      color: $magenta;
+  }
+  img{
+    width: 18px;
+    margin: 0 10px 0 0;
+  }
+}
+
 //break
 @media screen and (max-width: 1100px) {
   .wrapper{
