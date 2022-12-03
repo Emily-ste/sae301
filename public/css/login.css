@@ -30,7 +30,7 @@ input:focus {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #000000;
-  box-shadow: 7px 7px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 .container h2 {
   width: 100%;
@@ -75,7 +75,7 @@ input:focus {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #000000;
-  box-shadow: 7px 7px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 .container-register h2 {
   width: 100%;
