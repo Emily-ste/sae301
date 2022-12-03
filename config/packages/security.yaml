@@ -21,6 +21,8 @@ security:
                 path: app_logout
                 # where to redirect after logout
                 target: /
+            #form_login:
+             #   use_referer: true
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
