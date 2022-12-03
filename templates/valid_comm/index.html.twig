@@ -1,20 +1,113 @@
 {% extends 'base.html.twig' %}
-{% block meta %}<meta name="robots" content="noindex,nofollow"/>{% endblock %}
-{% block title %}Validation{% endblock %}
 
+{% block stylesheet %} {{ asset('css/panier.css') }} {% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div id="popup">
+        <h1>Confirmez-vous les informations saisies ?</h1>
+        <div>
+            <a class="retour">Pas encore...</a>
+            <a>Passer la commande</a>
+        </div>
+    </div>
+    <div id="veil"></div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="wrapper">
+        <input type="hidden" name="liste" id="liste">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/sae301/src/Controller/ValidCommController.php'|file_link(0) }}">src/Controller/ValidCommController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/sae301/templates/valid_comm/index.html.twig'|file_link(0) }}">templates/valid_comm/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <div class="zone tunnel" id="zoneb">
+            <h1>Plus qu'une étape, {{ app.user.clientPrenom }} !</h1><br/>
+
+            <!-- INFORMATIONS DE LIVRAISON -->
+            <h2>Saisissez une adresse de facturation</h2>
+            <div class="etape1">
+                <div class="cote">
+                    <div class="sub">
+                        <label for="pays">Pays</label>
+                        <input id="pays" type="text" placeholder="Pays" class="champ full" />
+                    </div>
+                    <div class="sub">
+                        <label for="ville">Ville</label>
+                        <input id="ville" type="text" placeholder="Ville" class="champ full" />
+                    </div>
+                </div>
+
+                <label for="adresse">Adresse</label>
+                <input id="adresse" type="text" placeholder="Adresse" class="champ inline full" />
+
+                <div class="cote">
+                    <div class="sub">
+                        <label for="code">Code postal</label>
+                        <input id="code" type="text" placeholder="Code postal" class="champ full" />
+                    </div>
+                    <div class="sub">
+                        <label for="tel">Téléphone</label>
+                        <input id="tel" type="text" placeholder="Téléphone" class="champ full" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOYEN DE LIVRAISON -->
+            <h2>Choisissez votre moyen de livraison</h2>
+            <div class="etape1">
+                <p><input type="radio" name="radio" id="radio" value="1" checked="checked" />Livraison physique</p>
+                <p><input type="radio" name="radio" id="radio" value="1" />Livraison dématerialisée</p>
+            </div>
+
+            <!-- MOYEN DE PAIEMENT -->
+            <h2>Choisissez votre mode de paiement</h2>
+            <div class="etape1">
+                <p><input type="radio" name="radio2" id="btn-cb" value="1" checked="checked" /> Paiement par CB</p>
+                <p><input type="radio" name="radio2" id="btn-paypal" value="1" /> paiement par Paypal</p>
+
+
+                <!-- SI CB SELECTIONNÉ -->
+                <div class="etape2 show" id="cb">
+                    <label for="nomc">Nom associé à la carte bancaire</label>
+                    <input id="nomc" type="text" placeholder="Nom associé à la carte bancaire" class="champ full paypal-avoid" />
+                    <label for="num" >Numéro de la carte</label>
+                    <input id="num"type="text" placeholder="Numéro de la carte" class="champ full paypal-avoid" />
+                    <div class="cote">
+                        <div class="sub">
+                            <label for="expi">Date d'expiration</label>
+                            <input id="expi" type="text" placeholder="Date d'expiration" class="champ full paypal-avoid" />
+                        </div>
+                        <div class="sub">
+                            <label for="crypto">Cryptogramme</label>
+                            <input id="crypto" type="text" placeholder="Cryptogramme" class="champ full paypal-avoid" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SI PAYPAL SELECTIONNÉ -->
+                <div class="etape2 hide" id="paypal">
+                    <img class="paypal" src="{{ asset('img/affiches/paypal.png') }}" alt="paypal" />
+                </div>
+                <a class="suite valid">Valider votre commande</a>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper--side" >
+            <div class="recap" id="recap">
+            </div>
+
+            {% if app.user %}
+                <form action="valid-comm" method="post">
+                    <button id="valider">Valider</button>
+                </form>
+            {% else %}
+                <form action="login" method="post">
+                    <button id="valider">Valider</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}
+
+{% block script %}
+    <script src="{{ asset('script/scripttunnel.js') }}"></script>
+    <script src="{{ asset('script/scriptpanier.js') }}"></script>
+{% endblock %}
+
+
