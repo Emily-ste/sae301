@@ -9,10 +9,11 @@
 {% block body %}
 
 <div class="wrapper">
-    <form action="" id="searchForm">
-        <input id="searchBar" type="text" style="border: 2px black solid">
-    </form>
     <h1>Les évènements à venir !</h1><br>
+    <form action="" id="searchForm">
+        <label for="search">Cherche un évènement : </label><br>
+        <input id="searchBar" type="text">
+    </form>
     <div class="container" id="events-area">
         {% include "evenements/_reponse.html.twig" %}
     </div>

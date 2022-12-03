@@ -28,7 +28,7 @@ class EvenementsController extends AbstractController
     public function eventsName($name, EntityManagerInterface $entityManager, ManifestationsRepository $ManifestationsRepository)
     {
         //if name empty render all events
-        if (empty($name)) {
+        if ($name === 'all') {
             $events = $ManifestationsRepository->findAll();
         } else {
             $events = $ManifestationsRepository->FindManifestationsByName($name);
