@@ -18,7 +18,7 @@
 }
 #navbar--content nav ul li a {
   color: black;
-  font-size: clamp(1.2rem, 1.7vw, 2rem);
+  font-size: clamp(1.2rem, 1.6vw, 2rem);
 }
 #navbar--content nav ul li a:hover {
   color: #D80C61;
@@ -53,8 +53,9 @@
 }
 
 #link {
+  display: flex;
   position: absolute;
-  right: 10px;
+  right: 0px;
   bottom: -35px;
 }
 #link a {
