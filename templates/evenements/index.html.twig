@@ -10,19 +10,8 @@
 
 <div class="wrapper">
     <h1>Les évènements à venir !</h1><br>
-    <div class="container">
-
-{% for event in events %}
-        <a href="event/{{ event.id }}">
-            <div class="tile" style="background-image: url({{ asset(event.manifAffiche) }})">
-                <div class="type">{{ event.ManifGenre }}</div>
-                <div class="text">
-                    <p>{{ event.ManifDate }} - {{ event.ManifHoraire }}</p>
-                    <h3>{{ event.ManifTitre }}</h3>
-                </div>
-            </div>
-        </a>
-{% endfor %}
+    <div class="container" id="events-area">
+        {% include "evenements/_reponse.html.twig" %}
     </div>
 </div>
 

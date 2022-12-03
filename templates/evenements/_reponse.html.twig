@@ -1,0 +1,11 @@
+{% for event in events %}
+    <a href="event/{{ event.id }}">
+        <div class="tile" style="background-image: url({{ asset(event.manifAffiche) }})">
+            <div class="type">{{ event.ManifGenre }}</div>
+            <div class="text">
+                <p>{{ event.ManifDate }} - {{ event.ManifHoraire }}</p>
+                <h3>{{ event.ManifTitre }}</h3>
+            </div>
+        </div>
+    </a>
+{% endfor %}
