@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block meta %}
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Une question ? Consultez nos infos-pratiques !"/>
+{% endblock %}
+{% block title %}Infos pratique{% endblock %}
+{% block stylesheet %} {{ asset('css/autres.css') }} {% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <h1>Infos pratiques</h1>
+
+        <div class="intro">
+            Vous avez ou vous voulez acheter un billet
+            et vous vous posez des questions ? Voici ci-dessous
+            les questions les plus fréquentes. Si néanmoins vous ne
+            trouvez pas la réponse à votre question vous pouvez toujours
+            contacter notre service billetterie en vous rendant : <a id="ici" href="{{ path('app_contact') }}">ICI</a>
+        </div>
+
+        <div class="info">
+            <h2>BILLETS NOMINATIFS</h2>
+            Les billets ne sont pas nominatifs.
+            Vous pourrez donc accéder aux évènements sans problème, et ce, même si ce n’est pas votre nom
+            qui apparaît sur le billet.
+        </div>
+        <div class="info">
+            <h2>MODIFICATION / ANNULATION DE COMMANDE</h2>
+            Les billets ne sont ni repris ni échangés, sauf en cas de report ou d’annulation du fait
+            de l’organisateur. Le prix, la date et l’heure mentionnés sur le billet ou sur la
+            commande doivent être vérifiés par le client au moment du règlement afin qu’il s’
+            assure qu’il corresponde bien à la prestation sollicitée. Aucune réclamation ultérieure
+            ne pourra être prise en compte à quelque titre que ce soit. Il est expressément rappelé
+            qu’aux termes de l’article L. 121-20-4 du Code de la consommation, le client ne peut pas
+            exercer son droit de rétractation concernant les prestations de loisirs (spectacles) qui
+            doivent être fournis à une date ou selon une périodicité déterminée.
+            Aucun remboursement ou échange ne sera accepté en cas de retard, l’horaire des spectacles
+            étant clairement annoncé à l’achat et indiqué sur les billets.
+            Par respect pour le public et les artistes, le placement aux places numérotées
+            n’est plus garanti après le lever de rideau.
+        </div>
+        <div class="info">
+            <h2>NON-FUMEUR</h2>
+            Conformément au décret n°2006 – 1386 du 15 novembre 2006 et à l’article L3513-6 du code de la santé publique,
+            il est strictement interdit de fumer ou vapoter à l’intérieur des salles de la commune.
+            Des espaces fumeurs sont aménagés à l’extérieur des établissements.
+        </div>
+        <div class="info">
+            <h2>APPAREIL PHOTO / VIDEO</h2>
+            De manière générale, les appareils photos « non professionnels »
+            (jetables, compacts) sont autorisés. Les appareils photos « professionnels »
+            (bridges, réflex) ne sont pas autorisés, sauf pour les professionnels détenteurs
+            d’une accréditation photo à obtenir auprès de la production, du label
+            ou du management de la production. Attention, certains concerts ou évènements peuvent donner
+            lieu à des consignes particulières qui seront mentionnées à votre arrivée en salle.
+        </div>
+
+        <div class="info">
+            <h2>ACCREDITATION</h2>
+            Le site de réservation de Pignon-sur-mer ne gère aucune demande d’accréditation.
+            Toutes les demandes doivent être adressées à la production des évènements.
+        </div>
+    </div>
+{% endblock %}

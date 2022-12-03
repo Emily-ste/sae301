@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Evenements{% endblock %}
+{% block meta %}
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Tous les évènements à venir près de chez vous à Pignon-sur-mer"/>
+{% endblock %}
 {% block stylesheet %} {{ asset('css/evenements.css') }} {% endblock %}
+
 {% block body %}
 
 <div class="wrapper">
-    <div class="container">
-
-{% for event in events %}
-        <a href="event/{{ event.id }}">
-            <div class="tile" style="background-image: url({{ asset(event.manifAffiche) }})">
-                <div class="type">{{ event.ManifGenre }}</div>
-                <div class="text">
-                    <p>{{ event.ManifDate }} - {{ event.ManifHoraire }}</p>
-                    <h3>{{ event.ManifTitre }}</h3>
-                </div>
-            </div>
-        </a>
-{% endfor %}
+    <h1>Les évènements à venir !</h1><br>
+    <form action="" id="searchForm">
+        <label for="searchBar">Chercher un évènement : </label><br>
+        <input id="searchBar" type="text">
+    </form>
+    <div class="container" id="events-area">
+        {% include "evenements/_reponse.html.twig" %}
     </div>
 </div>
 
 
 {% endblock %}
+{% block script %}<script src="{{ asset('script/filter.js') }}"></script>{% endblock %}

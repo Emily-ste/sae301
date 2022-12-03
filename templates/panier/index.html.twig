@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
+{% block title %}Panier{% endblock %}
+{% block meta %}<meta name="robots" content="noindex,nofollow"/>{% endblock %}
 {% block stylesheet %} {{ asset('css/panier.css') }} {% endblock %}
+
 {% block body %}
 
     {% set panier = app.request.cookies.get('panier') %}
@@ -22,6 +25,7 @@
 
             <div class="zone" id="zone">
             </div>
+
 
             <div class="wrapper--side" >
                 <div class="recap" id="recap">

@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello FooterController!{% endblock %}
-
 {% block footer %}
     <link rel="stylesheet" href="{{ asset('css/base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
@@ -9,33 +7,33 @@
 <div class="footer-container">
     <div class="renseigner">
         <p>Restez informés :</p>
-        <input type="text" placeholder="Veuillez renseigner votre e-mail">
+        <input id="newsletter" type="text" placeholder="Veuillez renseigner votre e-mail">
+        <label for="newsletter" style="display: none">s'insrire a la newsletter</label>
     </div>
     <div class="footer">
         <div class="haut">
             <div class="gauche">
-                <img src="{{ asset('svg/logoWhite.svg') }}" alt="">
+                <img src="{{ asset('svg/logoWhite.svg') }}" alt="Logo Pignon-sur-mer">
                 <div class="rejoignez">
                     <p>rejoignez-nous :</p>
                     <div class="reseaux">
-                        <a href="https://www.facebook.com/"><img src="{{ asset('svg/facebook.svg') }}" alt=""></a>
-                        <a href="https://www.instagram.com/"><img src="{{ asset('svg/instagram.svg') }}" alt=""></a>
-                        <a href="https://twitter.com/"><img src="{{ asset('svg/twitter.svg') }}" alt=""></a>
+                        <a href="https://www.facebook.com/"><img src="{{ asset('svg/facebook.svg') }}" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/"><img src="{{ asset('svg/instagram.svg') }}" alt="Instagram"></a>
+                        <a href="https://twitter.com/"><img src="{{ asset('svg/twitter.svg') }}" alt="Twitter"></a>
                     </div>
                 </div>
             </div>
             <right class="droite">
-            <p>Evenements</p>
-            <p>Infos pratiques</p>
-            <p>Infos pratiques</p>
-            <p>Contact</p>
-            <p>Mentions légales</p>
-            <p>Mon compte</p>
+            <a href="{{ path('evenements') }}">Evenements</a>
+            <a href="{{ path('app_infos_pratiques') }}">Infos pratiques</a>
+            <a href="{{ path('app_contact') }}">Contact</a>
+            <a href="{{ path('app_mentions_legales') }}">Mentions légales</a>
+            <a href="{{ path('app_profil') }}">Mon compte</a>
             </right>
         </div>
 
         <div class="bas">
-            <p>Pignon-sur-mer© 2020 - Tous droits réservés</p>
+            <p>Pignon-sur-mer© 2022 - Tous droits réservés</p>
         </div>
     </div>
 </div>

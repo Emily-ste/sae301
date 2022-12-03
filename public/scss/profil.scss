@@ -60,7 +60,7 @@ h1{
   width: 18px;
 }
 
-.button{
+.button, #client_sauvegarder{
   background: #FFDF00;
   border-radius: 10px;
   margin-top: 20px;
@@ -75,5 +75,49 @@ h1{
   align-items: center;
   &:hover{
     background: #FFD800;
+  }
+}
+
+.prenom-nom{
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  div{
+    width: 50%;
+  }
+}
+
+input{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  &:focus{
+    border: 2px solid #FFDF00;
+    outline: none;
+  }
+}
+
+#email{
+  margin-top: 15px;
+  width: 100%;
+}
+
+.edit{
+  width: 600px;
+  display: block;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+  .edit{
+    width: 400px;
+  }
+
+  #infos{
+    flex-direction: column;
   }
 }

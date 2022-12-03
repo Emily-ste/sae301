@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /evenements/*
+Disallow: /*.jpg$
+Disallow: /admin/

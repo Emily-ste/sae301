@@ -4,18 +4,18 @@
 
     <div id="navbar">
         <div id="navbar--content">
-            <span id="logo"><a href="{{ path('app_accueil') }}"><img src="{{ asset('svg/logoBlack.svg') }}" alt="logo du site"></a></span>
+            <span id="logo"><a href="{{ path('app_accueil') }}"><img src="{{ asset('svg/logoBlack.svg') }}" alt="logo Pignon-sur-mer"></a></span>
 
             <nav>
                 <ul>
                     <li><a href="{{ path('evenements') }}">Évènements</a></li>
-                    <li><a href="{{ path('app_infos_pratiques') }}">Infos pratiques</a></li>
+                    <li><a href="{{ path('app_infos_pratiques') }}">Infos&nbsppratiques</a></li>
                     <li><a href="{{ path('app_contact') }}">Contact</a></li>
                 </ul>
             </nav>
 
             <div id="picto--nav">
-                <a href="#"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>
+                {#<a href="{{ path('app_recherche') }}"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>#}
 
                 <a href="{{ path('app_panier') }}" id="container-panier"><img src="{{ asset('svg/panier.svg') }}" alt="bouton panier">
                     {% if app.request.attributes.get('_route') != 'app_panier' %}
@@ -35,7 +35,7 @@
                     {% endif %}
 
                     {% if app.user%}
-                        <a href="{{ path('app_logout') }}">Logout</a>
+                        <a href="{{ path('app_logout') }}">Déconnexion</a>
                     {% endif %}
                 </div>
 
