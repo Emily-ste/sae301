@@ -8,11 +8,14 @@ $shadow: -5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 .container{
-  display: flex;
+  /*display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 150px 100px;*/
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 150px 100px;
-  margin-bottom: 200px;
+  margin-bottom: 50px;
   a{
     color: black;
   }
@@ -101,6 +104,23 @@ input{
   }
   input{
     width: 100%;
+  }
+}
+
+//media
+@media screen and (max-width: 1400px) {
+  .container{
+    grid-template-columns: 1fr 1fr;
+    gap: 100px 50px;
+    justify-items: center;
+  }
+}
+
+//media
+@media screen and (max-width: 800px) {
+  .container{
+    grid-template-columns: 1fr;
+    gap: 50px;
   }
 }
 
