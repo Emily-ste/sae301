@@ -9,23 +9,28 @@
 {% block body %}
 
 <div class="wrapper">
-    <div class="container">
+    <div class="container-register">
     <h2>S'inscrire</h2>
+        {{ form_start(registrationForm) }}
+            <div class="duo">
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de passe'
+                }) }}
+            </div>
+            <div class="duo">
+                {{ form_row(registrationForm.client_prenom) }}
+                {{ form_row(registrationForm.client_nom) }}
+            </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-    {{ form_row(registrationForm.client_prenom) }}
-    {{ form_row(registrationForm.client_nom) }}
-    {{ form_row(registrationForm.client_adr_rue) }}
-    {{ form_row(registrationForm.client_adr_cp) }}
-    {{ form_row(registrationForm.client_adr_ville) }}
+        {{ form_row(registrationForm.client_adr_rue) }}
+            <div class="duo">
+                {{ form_row(registrationForm.client_adr_cp) }}
+                {{ form_row(registrationForm.client_adr_ville) }}
+            </div>
 
-
-        <button type="submit" class="button">S'inscrire</button>
-    {{ form_end(registrationForm) }}
+            <button type="submit" class="button">S'inscrire</button>
+        {{ form_end(registrationForm) }}
     </div>
 </div>
 {% endblock %}

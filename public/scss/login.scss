@@ -67,3 +67,54 @@ input{
   display: flex;
   justify-content: space-between;
 }
+
+.container-register {
+  width: 650px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  box-shadow: $shadow-low;
+  h2{
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  form{
+    width: 100%;
+    div{
+      margin: 5px 0;
+    }
+  }
+}
+
+.duo{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+//media query
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+  .container-register {
+    margin-top: 50px;
+    width: 350px;
+  }
+  .duo{
+    display: block;
+  }
+}
