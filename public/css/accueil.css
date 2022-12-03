@@ -8,11 +8,11 @@
 
 .slide--home {
   width: 100%;
-  background-image: url("../img/home.webp");
+  background-image: url("../img/home.jpeg");
   height: 350px;
   background-size: cover;
   border-radius: 10px;
-  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.35);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.25);
   position: relative;
 }
 .slide--home h1 {
@@ -37,7 +37,7 @@ h2 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 200px;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 .container--prochainement a {
   color: black;
@@ -50,7 +50,8 @@ h2 {
   background-size: cover;
   position: relative;
   border-radius: 20px;
-  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.35);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.25);
+  transition: 400ms;
 }
 
 .type {
@@ -59,9 +60,10 @@ h2 {
   padding: 0 15px;
   border: 2px black solid;
   border-radius: 10px;
-  bottom: 40px;
+  bottom: 0px;
   right: -10px;
   z-index: 10;
+  color: black;
 }
 
 .text {
@@ -72,21 +74,51 @@ h2 {
   right: -30px;
   color: white;
   padding: 15px;
+  transition: 600ms;
 }
 .text h3 {
   margin-top: 3px;
   margin-left: 6px;
   font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .text p {
   font-size: 0.85rem;
   font-weight: lighter;
 }
 
+.container-type {
+  position: relative;
+}
+
+#voir-plus {
+  background: #FFDF00;
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#voir-plus:hover {
+  background: #FFD800;
+}
+
 @media screen and (max-width: 1000px) {
   .wrapper {
     padding: 0 20px;
   }
+}
+.tile:hover .text {
+  transform: translateY(-30px);
+}
+
+.tile:hover {
+  transform: translateY(-20px);
 }
 
 /*# sourceMappingURL=accueil.css.map */

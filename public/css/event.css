@@ -39,7 +39,7 @@
   height: 400px;
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 .control {
@@ -99,6 +99,22 @@
 }
 #qte:hover {
   cursor: pointer;
+}
+
+#back {
+  position: absolute;
+  margin-top: 20px;
+  font-size: 1.25rem;
+  color: black;
+  top: 130px;
+}
+#back:hover {
+  cursor: pointer;
+  color: #D80C61;
+}
+#back img {
+  width: 18px;
+  margin: 0 10px 0 0;
 }
 
 @media screen and (max-width: 1100px) {

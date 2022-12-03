@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
-
-{% block stylesheet %}
-    {{ asset('css/panier.css') }}
+{% block title %}Plus qu'une étape !{% endblock %}
+{% block meta %}
+    <meta name="robots" content="noindex,nofollow"/>
 {% endblock %}
+
+{% block stylesheet %}{{ asset('css/panier.css') }}{% endblock %}
 
 {% block body %}
 
@@ -11,7 +13,7 @@
             <h1>Confirmez-vous les informations saisies ?</h1>
             <div>
                 <a class="retour">Pas encore...</a>
-                <a>Passer la commande</a>
+                <a href="{{ path('app_commande') }}">Passer la commande</a>
             </div>
         </div>
         <div id="veil"></div>
