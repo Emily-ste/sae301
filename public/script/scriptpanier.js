@@ -29,7 +29,9 @@ else {
 //On marque combien de produits sont dans le panier (Header)
 var panier =0
 montab.forEach(element => { panier+= element.quantite })
-document.getElementById('panier').innerHTML=panier
+if (document.getElementById('panier') !== null) {
+    document.getElementById('panier').innerHTML = parseInt(panier);
+}
 
 //=============================================================================================
 //(ARTICLE)
@@ -57,7 +59,9 @@ if (document.getElementById('ajout') !== null) {
                 'prix': prix
             })
             panier += parseInt(document.getElementById('qte').value);
-            document.getElementById('panier').innerHTML = parseInt(panier);
+            if (document.getElementById('panier') !== null) {
+                document.getElementById('panier').innerHTML = parseInt(panier);
+            }
         }
 
         //On met à jour les cookies
@@ -71,38 +75,46 @@ if (document.getElementById('ajout') !== null) {
 if (document.getElementById('liste') !== null) {
     document.getElementById('liste').value = JSON.stringify(montab);
 }
+if (document.getElementById('comp') !== null) {
+    comp = JSON.parse(document.getElementById('comp').value);
+} else {
+    comp = Array()
+}
+
 
 var totalgeneral=0
 var nbtotal=0
-montab.forEach(uneinfo => {
-     //htmlA
-    htmlA = `<div class="produit" id="${uneinfo.id}">
-        <img src="https://via.placeholder.com/150x150" alt="">
-            <div class="produit--info">
-                <div class="left">
-                    <h2>${uneinfo.article}</h2>
-                    <p>Le <span id="date"></span></p>
-                    <p id="horaire"></p>
-                </div>
-
-                <div class="right">
-                    <p><span class="unitaire">${uneinfo.prix}</span>€</p>
-                    <p style="position: absolute;display: none"><span class="prix">${uneinfo.quantite * uneinfo.prix}</span></p>
-                    <div class="control">
-                        <a class="moins">-</a>
-                        <span>${uneinfo.quantite}</span>
-                        <a class="plus">+</a>
+if (document.getElementById('zone') !== null) {
+    montab.forEach(uneinfo => {
+        //htmlA
+        htmlA = `<div class="produit" id="${uneinfo.id}">
+            <img src="https://via.placeholder.com/150x150" alt="">
+                <div class="produit--info">
+                    <div class="left">
+                        <h2>${uneinfo.article}</h2>
+                        <p>Le <span id="date">${comp[uneinfo.id]['manif_date']}</span></p>
+                        <p id="horaire">${comp[uneinfo.id]['manif_horaire']}</p>
                     </div>
-                    <a href="#">Supprimer</a>
+    
+                    <div class="right">
+                        <p><span class="unitaire">${uneinfo.prix}</span>€</p>
+                        <p style="position: absolute;display: none"><span class="prix">${uneinfo.quantite * uneinfo.prix}</span></p>
+                        <div class="control">
+                            <a class="moins">-</a>
+                            <span>${uneinfo.quantite}</span>
+                            <a class="plus">+</a>
+                        </div>
+                        <a href="#">Supprimer</a>
+                    </div>
                 </div>
-            </div>
-        </div>`;
-    if (document.getElementById('zone') !== null) {
-        document.getElementById('zone').innerHTML += htmlA
-        console.log('zone ajoutée')
-    }
+            </div>`;
 
-     //htmlB
+            document.getElementById('zone').innerHTML += htmlA
+            console.log('zone ajoutée')
+    })
+}
+montab.forEach(uneinfo => {
+    //htmlB
     htmlB = `<div class="entree" id="${uneinfo.id}b">
                 <h4>${uneinfo.article}</h4>
                 <p>Qté : <span id="${uneinfo.id}b-qte">${uneinfo.quantite}</span><br><span class="prix" id="${uneinfo.id}b-prix">${uneinfo.quantite * uneinfo.prix}</span>€</p>
@@ -116,7 +128,7 @@ montab.forEach(uneinfo => {
     nbtotal += uneinfo.quantite
 })
 
- //htmlC
+//htmlC
 htmlC = `<div class="recap--entree">
                 <p>Nombre d'article : <span id="nbtotal"></span></p>
                 <p>Total : <span class="total" id="total">44</span>€</p>
@@ -127,7 +139,7 @@ if (document.getElementById('recap') !== null) {
 }
 
 
- //Mettre à jour le prix total du panier
+//Mettre à jour le prix total du panier
 if (document.getElementById('total') !== null) {
     document.getElementById('total').innerHTML = totalgeneral
 }
@@ -151,7 +163,7 @@ function clickplus(tag){
         document.querySelector('#total').innerHTML=totalgeneral
         document.querySelector('#nbtotal').innerHTML=nbtotal
 
-         // recupere l'id de l'article cliqué
+        // recupere l'id de l'article cliqué
 
         index = montab.findIndex(element => element.id == id); //trouver l'article dans la liste du panier
         montab[index].quantite = parseInt(montab[index].quantite) +1; //incrementer la quantité
@@ -199,3 +211,5 @@ function clickmoins(tag){
         document.getElementById('liste').value=JSON.stringify(montab); // sauver montab pour le formulaire
     })
 }
+//=============================================================================================
+//(COORDONNEES)
