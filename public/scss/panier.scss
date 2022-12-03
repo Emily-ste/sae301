@@ -1,3 +1,6 @@
+$shadow-low: 7px 7px 50px rgba(0, 0, 0, 0.15);
+$magenta : #D80C61;
+
 //amir
 .show2{transform: translate(-50%, -50%) !important;}
 .show{display: block !important;}
@@ -52,13 +55,36 @@ label{
     transform: translate(-50%, 300%);
     filter: brightness(100%);
 }
+.wrapper-vide{
+    flex-direction: column;
+    text-align: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper-vide p {
+    font-size: 50px;
+    font-weight: 600;
+}
+.wrapper-vide a {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: $magenta;
+    color: white;
+    border-radius: 10px;
+    &:hover{
+        background: #c90756;
+    }
+}
 #popup a{
     font-size: 25px;
     font-weight: 600;
     padding: 10px 20px;
-    background-color: #D80C61;
+    background-color: $magenta;
     color: white;
-    border-radius: 7px;
+    border-radius: 10px;
     text-align: center;
     margin: 10px;
     display: inline;
@@ -94,9 +120,9 @@ label{
     font-size: 25px;
     font-weight: 600;
     padding: 10px 20px;
-    background-color: #D80C61;
+    background-color: $magenta;
     color: white;
-    border-radius: 7px;
+    border-radius: 10px;
 }
 
 .paypal:hover{
@@ -166,7 +192,7 @@ label{
     color: black;
     padding: 0px 20px;
     height: 50px;
-    border-radius: 6px;
+    border-radius: 10px;
     border: solid 2px black;
     &:focus{
         outline: none;
@@ -182,8 +208,6 @@ label{
 
 
 //emy
-$shadow-low: 7px 7px 50px rgba(0, 0, 0, 0.15);
-$magenta : #D80C61;
 
 .wrapper{
     width: 100%;

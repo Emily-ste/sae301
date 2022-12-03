@@ -90,7 +90,7 @@ input:focus {
 
 #searchForm {
   justify-self: start;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 @media screen and (max-width: 1200px) {
