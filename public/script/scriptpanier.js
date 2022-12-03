@@ -18,12 +18,12 @@ function recupCookie(nom){
 liste = recupCookie("panier")
 if (liste!==null) {
     montab = JSON.parse(liste)
-    console.log('Panier rempli')
+    //console.log('Panier rempli')
     console.log(montab)
 }
 else {
     montab =Array()
-    console.log('panier vide')
+    //console.log('panier vide')
 }
 
 //On marque combien de produits sont dans le panier (Header)
@@ -41,6 +41,8 @@ if (document.getElementById('ajout') !== null) {
         var id = document.getElementById('id').value
         var article = document.getElementById('article').innerHTML
         var prix = document.getElementById('prix').innerHTML
+        var affiche = document.getElementById('affiche').src
+        console.log(affiche)
 
         index = montab.findIndex(element => element.id == id);
 
@@ -56,7 +58,8 @@ if (document.getElementById('ajout') !== null) {
                 'id': id,
                 'article': article,
                 'quantite': parseInt(document.getElementById('qte').value),
-                'prix': prix
+                'prix': prix,
+                'affiche': affiche
             })
             panier += parseInt(document.getElementById('qte').value);
             if (document.getElementById('panier') !== null) {
@@ -66,7 +69,7 @@ if (document.getElementById('ajout') !== null) {
 
         //On met à jour les cookies
         document.cookie = "panier="+JSON.stringify(montab)+"; path=/";
-        console.log(montab);
+        //console.log(montab);
     })
 }
 //=============================================================================================
@@ -88,7 +91,7 @@ if (document.getElementById('zone') !== null) {
     montab.forEach(uneinfo => {
         //htmlA
         htmlA = `<div class="produit" id="${uneinfo.id}">
-            <img src="https://via.placeholder.com/150x150" alt="">
+            <div class="img"><img src="${uneinfo.affiche}" alt=""></div>
                 <div class="produit--info">
                     <div class="left">
                         <h2>${uneinfo.article}</h2>
@@ -104,13 +107,13 @@ if (document.getElementById('zone') !== null) {
                             <span>${uneinfo.quantite}</span>
                             <a class="plus">+</a>
                         </div>
-                        <a href="#">Supprimer</a>
+                        <a class="supr" href="#">Supprimer</a>
                     </div>
                 </div>
             </div>`;
 
             document.getElementById('zone').innerHTML += htmlA
-            console.log('zone ajoutée')
+            //console.log('zone ajoutée')
     })
 }
 montab.forEach(uneinfo => {
@@ -121,7 +124,7 @@ montab.forEach(uneinfo => {
             </div>`
     if (document.getElementById('recap') !== null) {
         document.getElementById('recap').innerHTML += htmlB
-        console.log('recap ajoutée')
+        //console.log('recap ajoutée')
     }
 
     totalgeneral += uneinfo.prix * uneinfo.quantite
@@ -135,7 +138,7 @@ htmlC = `<div class="recap--entree">
             </div>`
 if (document.getElementById('recap') !== null) {
     document.getElementById('recap').innerHTML += htmlC
-    console.log('recap ajoutée')
+    //console.log('recap ajoutée')
 }
 
 
@@ -175,6 +178,7 @@ function clickplus(tag){
         document.getElementById(id+"b-prix").innerHTML=total;
     })
 }
+
 document.querySelectorAll('.moins').forEach(clickmoins)
 function clickmoins(tag){
     tag.addEventListener('click',function() {
@@ -211,5 +215,30 @@ function clickmoins(tag){
         document.getElementById('liste').value=JSON.stringify(montab); // sauver montab pour le formulaire
     })
 }
+
+document.querySelectorAll('.supr').forEach(suppr)
+function suppr(suppri){
+    suppri.addEventListener('click',function() {
+        qte= this.parentNode.querySelector('.control').querySelector('span').innerHTML;
+        id = this.parentNode.parentNode.parentNode.id; // recupere l'id de l'article cliqué
+        prix = this.parentNode.querySelector('.unitaire').innerHTML;
+        document.getElementById(id).remove()
+        document.getElementById(id+'b').remove()
+
+        totalgeneral -=  prix * qte
+        nbtotal -= qte
+        document.querySelector('#total').innerHTML=totalgeneral
+        document.querySelector('#nbtotal').innerHTML=nbtotal
+
+        index = montab.findIndex(element => element.id == id); //trouver l'article dans la liste du panier
+        montab.splice(index, 1);
+        //console.log(montab)
+
+
+        document.cookie = "panier="+JSON.stringify(montab)+"; path=/";  // sauvegarde des infos dans le cookie "liste"
+        document.getElementById('liste').value=JSON.stringify(montab); // sauver montab pour le formulaire
+    })
+}
+
 //=============================================================================================
 //(COORDONNEES)

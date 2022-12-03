@@ -380,6 +380,15 @@ h1 {
   align-items: flex-end;
 }
 
+.img {
+  width: 106px;
+  height: 106px;
+}
+.img img {
+  object-fit: cover;
+  height: 100%;
+}
+
 @media screen and (max-width: 1100px) {
   .wrapper {
     align-items: center;
