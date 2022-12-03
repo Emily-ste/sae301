@@ -27,7 +27,12 @@ class EvenementsController extends AbstractController
     #[Route("/evenements/{name}", name:"evenements_name")]
     public function eventsName($name, EntityManagerInterface $entityManager, ManifestationsRepository $ManifestationsRepository)
     {
-        $events = $ManifestationsRepository->FindManifestationsByName($name);
+        //if name empty render all events
+        if (empty($name)) {
+            $events = $ManifestationsRepository->findAll();
+        } else {
+            $events = $ManifestationsRepository->FindManifestationsByName($name);
+        }
 
         return new JsonResponse($this->renderView('evenements/_reponse.html.twig', [
             'events' => $events

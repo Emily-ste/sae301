@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .container {
@@ -15,11 +15,6 @@
 }
 .container a {
   color: black;
-}
-
-h1{
-  font-size: 2.5rem;
-  margin-bottom: 40px;
 }
 
 .tile {
@@ -60,6 +55,14 @@ h1{
 .text p {
   font-size: 0.85rem;
   font-weight: lighter;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=evenements.css.map */

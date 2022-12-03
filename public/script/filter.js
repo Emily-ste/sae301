@@ -2,6 +2,10 @@ const searchBar = document.getElementById('searchBar');
 const url = new URL(window.location.href);
 const form = document.getElementById('searchForm');
 const eventArea = document.getElementById('events-area');
+const avenir = document.getElementById('avenir');
+
+
+
 
 //prevent default form
 form.addEventListener('submit', (e) => {
