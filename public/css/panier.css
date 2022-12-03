@@ -69,13 +69,6 @@ label {
   filter: brightness(100%);
 }
 
-@media screen and (max-width: 600px) {
-  #popup {
-    width: 90%;
-    height: 50vh;
-  }
-}
-
 #popup a {
   font-size: 25px;
   font-weight: 600;
