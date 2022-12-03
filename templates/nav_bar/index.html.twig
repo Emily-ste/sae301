@@ -15,7 +15,7 @@
             </nav>
 
             <div id="picto--nav">
-                <a href="{{ path('app_recherche') }}"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>
+                {#<a href="{{ path('app_recherche') }}"><img src="{{ asset('svg/recherche.svg') }}" alt="bouton de recherche"></a>#}
 
                 <a href="{{ path('app_panier') }}" id="container-panier"><img src="{{ asset('svg/panier.svg') }}" alt="bouton panier">
                     {% if app.request.attributes.get('_route') != 'app_panier' %}
