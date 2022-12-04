@@ -45,7 +45,7 @@ class LignescommandesRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('l')
             ->innerJoin(Commandes::class, 'c', 'WITH c.id = l.commandes_id')
-            ->innerJoin(Manifestations::class, 'm', 'WITH m.id = l.manifestations_id')
+            ->innerJoin(Manifestations::class, 'm', 'WITH m.id = l.manifestation_id')
             ->where('c.client = :id')
             ->setParameter('id', $id)
             ->getQuery()
