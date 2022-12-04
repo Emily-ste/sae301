@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Commandes;
+use App\Entity\Lignescommandes;
+use App\Entity\Manifestations;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -38,6 +40,19 @@ class CommandesRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+    //findCommandesByUser
+    public function findCommandesByUser($user)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.client = :user')
+            ->setParameter('user', $user)
+            ->orderBy('c.id', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 
 //    /**
 //     * @return Commandes[] Returns an array of Commandes objects

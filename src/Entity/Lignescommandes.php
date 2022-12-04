@@ -16,19 +16,49 @@ class Lignescommandes
     #[ORM\Column]
     private ?int $nb_place_resa = null;
 
+    #[ORM\ManyToOne(inversedBy: 'lignescommandes')]
+    private ?Manifestations $manifestation = null;
+
+    #[ORM\ManyToOne(inversedBy: 'ligne_commande')]
+    private ?Commandes $commandes = null;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNb_place_resa(): ?int
+    public function getNbPlaceResa(): ?int
     {
-        return $this->commande_date;
+        return $this->nb_place_resa;
     }
 
-    public function setNb_place_resa(int $commande_date): self
+    public function setNbPlaceResa(int $nb_place_resa): self
     {
-        $this->commande_date = $commande_date;
+        $this->nb_place_resa = $nb_place_resa;
+
+        return $this;
+    }
+
+    public function getManifestation(): ?Manifestations
+    {
+        return $this->manifestation;
+    }
+
+    public function setManifestation(?Manifestations $manifestation): self
+    {
+        $this->manifestation = $manifestation;
+
+        return $this;
+    }
+
+    public function getCommandes(): ?Commandes
+    {
+        return $this->commandes;
+    }
+
+    public function setCommandes(?Commandes $commandes): self
+    {
+        $this->commandes = $commandes;
 
         return $this;
     }

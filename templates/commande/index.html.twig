@@ -4,6 +4,13 @@
 {% block stylesheet %}{{ asset('css/panier.css') }}{% endblock %}
 
 {% block body %}
+
+    {% if cookie is empty %}
+        <script>
+            window.location.href = "/";
+        </script>
+    {% endif %}
+
 <div class="wrapper" style="flex-direction: column;">
     <h1>Merci {{ app.user.clientPrenom }} pour la commande !</h1>
     <div style="display: flex; justify-content: center">
@@ -11,4 +18,8 @@
     </div>
     <p style="text-align: center; font-size: 1.5rem">Retrouvez votre commande depuis votre <a style="color: #D80C61; font-size: 1.5rem" href="{{ path('app_profil') }}">profil</a>.</p>
 </div>
+
+    <script defer>
+        document.cookie = "panier=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    </script>
 {% endblock %}

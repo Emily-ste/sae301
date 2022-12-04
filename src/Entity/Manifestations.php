@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ManifestationsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ManifestationsRepository::class)]
@@ -39,6 +41,14 @@ class Manifestations
 
     #[ORM\ManyToOne(inversedBy: 'salle')]
     private ?Salles $salles = null;
+
+    #[ORM\OneToMany(mappedBy: 'manifestation', targetEntity: Lignescommandes::class)]
+    private Collection $lignescommandes;
+
+    public function __construct()
+    {
+        $this->lignescommandes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -149,6 +159,36 @@ class Manifestations
     public function setSalles(?Salles $salles): self
     {
         $this->salles = $salles;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Lignescommandes>
+     */
+    public function getLignescommandes(): Collection
+    {
+        return $this->lignescommandes;
+    }
+
+    public function addLignescommande(Lignescommandes $lignescommande): self
+    {
+        if (!$this->lignescommandes->contains($lignescommande)) {
+            $this->lignescommandes->add($lignescommande);
+            $lignescommande->setManifestation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLignescommande(Lignescommandes $lignescommande): self
+    {
+        if ($this->lignescommandes->removeElement($lignescommande)) {
+            // set the owning side to null (unless already changed)
+            if ($lignescommande->getManifestation() === $this) {
+                $lignescommande->setManifestation(null);
+            }
+        }
 
         return $this;
     }
