@@ -67,7 +67,6 @@ class CommandeController extends AbstractController
 
         //delete session cookie
         return $this->render('commande/index.html.twig', [
-            'cookie' => $cookie,
             'controller_name' => 'CommandeController',
         ]);
     }
