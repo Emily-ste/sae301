@@ -19,6 +19,9 @@ class Lignescommandes
     #[ORM\ManyToOne(inversedBy: 'lignescommandes')]
     private ?Manifestations $manifestation = null;
 
+    #[ORM\ManyToOne(inversedBy: 'ligne_commande')]
+    private ?Commandes $commandes = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Lignescommandes
     public function setManifestation(?Manifestations $manifestation): self
     {
         $this->manifestation = $manifestation;
+
+        return $this;
+    }
+
+    public function getCommandes(): ?Commandes
+    {
+        return $this->commandes;
+    }
+
+    public function setCommandes(?Commandes $commandes): self
+    {
+        $this->commandes = $commandes;
 
         return $this;
     }
