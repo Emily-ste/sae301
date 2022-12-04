@@ -39,8 +39,7 @@
                         <a href="#">
                             <p href="">
                                 {{ manifestation.manifTitre }}<br>
-                                {{ manifestation.manifDate }}<br>
-                                {{ manifestation.manifHoraire }}<br>
+                                {{ manifestation.manifDate }} : {{ manifestation.manifHoraire }}
                             </p>
                             <div class="control">
                                 <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt="Voir commande"></a>
@@ -51,7 +50,7 @@
                 {% endfor %}
 
             </div>
-            <a href="{{ path('app_client_commandes') }}" class="button">Voir plus</a>
+            <a href="#" class="button">Voir plus</a>
         </div>
     </div>
 </div>

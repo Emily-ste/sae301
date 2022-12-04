@@ -13,7 +13,7 @@
         <h2>Connectez vous</h2>
         <form method="post">
             {% if error %}
-                <div style="color: darkred">{#{{ error.messageKey|trans(error.messageData, 'security') }}#}Email ou mot de passe invalide</div>
+                <div style="color: darkred">{{ error.messageKey|trans(error.messageData, 'security') }}{#Email ou mot de passe invalide#}</div>
             {% endif %}
 
             <label for="inputEmail">Email</label>
