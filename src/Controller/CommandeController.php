@@ -23,6 +23,10 @@ class CommandeController extends AbstractController
         $cookie = $request->cookies->get('panier');
         $cookie = json_decode($cookie, true);
 
+        if ($cookie == null) {
+            return $this->redirectToRoute('evenements');
+        }
+
         //SAVE COMMANDE
         //get id of current user
         $id = $this->getUser()->getId();
@@ -65,8 +69,8 @@ class CommandeController extends AbstractController
             $entityManager->flush();
         }
 
-        //delete session cookie
         return $this->render('commande/index.html.twig', [
+            'cookie' => $cookie,
             'controller_name' => 'CommandeController',
         ]);
     }

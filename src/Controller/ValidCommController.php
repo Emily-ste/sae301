@@ -11,6 +11,9 @@ class ValidCommController extends AbstractController
     #[Route('/valid-comm', name: 'app_valid_comm')]
     public function index(): Response
     {
+        if (empty($_COOKIE['client'])) {
+            return $this->redirectToRoute('evenements');
+        }
         return $this->render('valid_comm/index.html.twig', [
             'controller_name' => 'ValidCommController',
         ]);
