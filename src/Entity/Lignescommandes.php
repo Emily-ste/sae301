@@ -27,14 +27,14 @@ class Lignescommandes
         return $this->id;
     }
 
-    public function getNb_place_resa(): ?int
+    public function getNbPlaceResa(): ?int
     {
-        return $this->commande_date;
+        return $this->nb_place_resa;
     }
 
-    public function setNb_place_resa(int $commande_date): self
+    public function setNbPlaceResa(int $nb_place_resa): self
     {
-        $this->commande_date = $commande_date;
+        $this->nb_place_resa = $nb_place_resa;
 
         return $this;
     }
