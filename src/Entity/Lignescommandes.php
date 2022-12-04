@@ -16,6 +16,9 @@ class Lignescommandes
     #[ORM\Column]
     private ?int $nb_place_resa = null;
 
+    #[ORM\ManyToOne(inversedBy: 'lignescommandes')]
+    private ?Manifestations $manifestation = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -29,6 +32,18 @@ class Lignescommandes
     public function setNb_place_resa(int $commande_date): self
     {
         $this->commande_date = $commande_date;
+
+        return $this;
+    }
+
+    public function getManifestation(): ?Manifestations
+    {
+        return $this->manifestation;
+    }
+
+    public function setManifestation(?Manifestations $manifestation): self
+    {
+        $this->manifestation = $manifestation;
 
         return $this;
     }
