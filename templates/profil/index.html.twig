@@ -5,7 +5,7 @@
 
 {% block body %}
 
-    {#{{ dump(commandes) }}#}
+    {{ dump(commandes) }}
     {{ dump(ligneCommandes) }}
     {{ ligneCommandes|json_encode|raw }}
 

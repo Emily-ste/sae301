@@ -22,13 +22,13 @@ class ProfilController extends AbstractController
         $id = $this->getUser()->getId();
         $client = $clientsRepository->findUserById($id);
         //find commande of current user
-        /*$commandes = $commandesRepository->findCommandesByUser($client);*/
+        $commandes = $commandesRepository->findCommandesByUser($client);
 
         //find ligne commande where commande id = commande id
         $ligneCommandes = $lignescommandesRepository->findLigneCommandeByCommande($id);
         return $this->render('profil/index.html.twig', [
             'ligneCommandes' => $ligneCommandes,
-            /*'commandes' => $commandes,*/
+            'commandes' => $commandes,
             'client' => $client,
             'controller_name' => 'ProfilController',
         ]);
