@@ -8,6 +8,12 @@
 
 {% block body %}
 
+    {% if cookie is empty %}
+        <script>
+            window.location.href = "/";
+        </script>
+    {% endif %}
+
     <div class="wrapper">
         <div id="popup">
             <h1>Confirmez-vous les informations saisies ?</h1>
