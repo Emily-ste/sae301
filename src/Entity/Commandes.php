@@ -16,6 +16,9 @@ class Commandes
     #[ORM\Column(length: 20)]
     private ?string $commande_date = null;
 
+    #[ORM\ManyToOne(inversedBy: 'commandes')]
+    private ?Clients $client = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -29,6 +32,18 @@ class Commandes
     public function setCommandeDate(string $commande_date): self
     {
         $this->commande_date = $commande_date;
+
+        return $this;
+    }
+
+    public function getClient(): ?Clients
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Clients $client): self
+    {
+        $this->client = $client;
 
         return $this;
     }
