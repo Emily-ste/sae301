@@ -49,12 +49,14 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
         $referer = $request->get('_target_path');
 
         if (str_contains($referer, '/login')) {
-            $referer = $this->urlGenerator->generate('app_accueil');
+            $referer = $this->urlGenerator->generate('app_panier');
         }
-        return new RedirectResponse($referer);
 
-
-        //return new RedirectResponse($this->urlGenerator->generate('app_accueil'));
+        if ($referer === null) {
+            return new RedirectResponse($this->urlGenerator->generate('app_accueil'));
+        } else {
+            return new RedirectResponse($referer);
+        }
 
     }
 
