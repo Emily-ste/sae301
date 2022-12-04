@@ -41,27 +41,18 @@ class CommandesRepository extends ServiceEntityRepository
         }
     }
 
-    public function findCommandesByUser($id)
+    //findCommandesByUser
+    public function findCommandesByUser($user)
     {
-        /*$entityManager = $this->getEntityManager();
-        $query = $entityManager->createQuery(
-            //inner join commande avec lignescommandes
-            'SELECT c
-            FROM App\Entity\Commandes c
-            INNER JOIN App\Entity\Lignescommandes l
-            ON l.commandes_id = c.id 
-            WHERE c.client_id = :id'
-        )->setParameter('id', $id);
-        return $query->getResult();*/
-        //query builder
         return $this->createQueryBuilder('c')
-            ->innerJoin(Lignescommandes::class, 'l', 'WITH l.commandes_id = c.id')
-            ->innerJoin(Manifestations::class, 'm', 'WITH m.id = l.manifestation_id')
-            ->where('c.client = :id')
-            ->setParameter('id', $id)
+            ->andWhere('c.client = :user')
+            ->setParameter('user', $user)
+            ->orderBy('c.id', 'DESC')
             ->getQuery()
-            ->getResult();
+            ->getResult()
+        ;
     }
+
 
 //    /**
 //     * @return Commandes[] Returns an array of Commandes objects

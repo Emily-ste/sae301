@@ -7,8 +7,10 @@
 
     {{ dump(commandes) }}
     {{ dump(ligneCommandes) }}
-    {{ commandes|json_encode|raw }}
-    {{ ligneCommandes|json_encode|raw }}
+    {{ dump(manifestation) }}
+
+    {% foreach lignes %}
+
 
 <div class="wrapper">
 

@@ -21,14 +21,31 @@ class ProfilController extends AbstractController
         //get id of current user
         $id = $this->getUser()->getId();
         $client = $clientsRepository->findUserById($id);
-        //find commande of current user
-        $commandes = $commandesRepository->findCommandesByUser($client);
 
-        //find ligne commande where commande id = commande id
-        $ligneCommandes = $lignescommandesRepository->findLigneCommandeByCommande($id);
+        //get all orders of current user
+        $commandes = $commandesRepository->findCommandesByUser($id);
+
+        foreach ($commandes as $commande) {
+            $lignescommandes = $lignescommandesRepository->findLignesCommandesByCommande($commande);
+            foreach ($lignescommandes as $lignecommande) {
+                $manifestation[] = $lignecommande->getManifestation();
+            }
+        }
+
+       /* foreach ($lignescommandes as $lignecommande) {
+            $manifestation[] = $lignecommande->getManifestation();
+        }*/
+
+        //get Lignescommandes where commande_id is in $commandesId
+
+
+
+
+
         return $this->render('profil/index.html.twig', [
-            'ligneCommandes' => $ligneCommandes,
             'commandes' => $commandes,
+            'ligneCommandes' => $lignescommandes,
+            'manifestation' => $manifestation,
             'client' => $client,
             'controller_name' => 'ProfilController',
         ]);

@@ -41,15 +41,16 @@ class LignescommandesRepository extends ServiceEntityRepository
         }
     }
 
-    public function findLigneCommandeByCommande($id)
+    //findLignesCommandesByCommande
+    public function findLignesCommandesByCommande($commandeId)
     {
         return $this->createQueryBuilder('l')
-            ->innerJoin(Commandes::class, 'c', 'WITH c.id = l.commandes_id')
-            ->innerJoin(Manifestations::class, 'm', 'WITH m.id = l.manifestation_id')
-            ->where('c.client = :id')
-            ->setParameter('id', $id)
+            ->andWhere('l.commandes = :commande')
+            ->setParameter('commande', $commandeId)
+            ->orderBy('l.id', 'ASC')
             ->getQuery()
-            ->getResult();
+            ->getResult()
+        ;
     }
 
 //    /**

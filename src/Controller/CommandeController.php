@@ -34,7 +34,7 @@ class CommandeController extends AbstractController
 
         //get date
         $date = new \DateTime();
-        $date = $date->format('Y-m-d H:i:s');
+        $date = $date->format('Y-m-d');
 
         //save id client et date in commande entity
         $commande = new Commandes();
