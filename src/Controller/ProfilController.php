@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Clients;
 use App\Form\ClientType;
 use App\Repository\ClientsRepository;
+use App\Repository\CommandesRepository;
+use App\Repository\LignescommandesRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,12 +16,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProfilController extends AbstractController
 {
     #[Route('/profil', name: 'app_profil')]
-    public function index(ClientsRepository $clientsRepository): Response
+    public function index(ClientsRepository $clientsRepository, CommandesRepository $commandesRepository, LignescommandesRepository $lignescommandesRepository): Response
     {
         //get id of current user
         $id = $this->getUser()->getId();
         $client = $clientsRepository->findUserById($id);
+        //find commande of current user
+        /*$commandes = $commandesRepository->findCommandesByUser($client);*/
+
+        //find ligne commande where commande id = commande id
+        $ligneCommandes = $lignescommandesRepository->findLigneCommandeByCommande($id);
         return $this->render('profil/index.html.twig', [
+            'ligneCommandes' => $ligneCommandes,
+            /*'commandes' => $commandes,*/
             'client' => $client,
             'controller_name' => 'ProfilController',
         ]);

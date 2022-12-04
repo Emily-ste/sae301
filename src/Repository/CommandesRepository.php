@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Commandes;
+use App\Entity\Lignescommandes;
+use App\Entity\Manifestations;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -37,6 +39,28 @@ class CommandesRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function findCommandesByUser($id)
+    {
+        /*$entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            //inner join commande avec lignescommandes
+            'SELECT c
+            FROM App\Entity\Commandes c
+            INNER JOIN App\Entity\Lignescommandes l
+            ON l.commandes_id = c.id 
+            WHERE c.client_id = :id'
+        )->setParameter('id', $id);
+        return $query->getResult();*/
+        //query builder
+        return $this->createQueryBuilder('c')
+            ->innerJoin(Lignescommandes::class, 'l', 'WITH l.commandes_id = c.id')
+            ->innerJoin(Manifestations::class, 'm', 'WITH m.id = l.manifestations_id')
+            ->where('c.client = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
     }
 
 //    /**
