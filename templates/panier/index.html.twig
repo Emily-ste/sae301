@@ -7,7 +7,7 @@
 
     {% set panier = app.request.cookies.get('panier') %}
 
-    {% if ( panier == "[]" ) %}
+    {% if ( panier == null ) %}
         <div class="wrapper-vide">
             <p>Votre panier est vide</p><br />
             <a href="{{ path('evenements') }}">Ajouter des produits</a>
