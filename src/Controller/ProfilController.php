@@ -32,20 +32,8 @@ class ProfilController extends AbstractController
             }
         }
 
-       /* foreach ($lignescommandes as $lignecommande) {
-            $manifestation[] = $lignecommande->getManifestation();
-        }*/
-
-        //get Lignescommandes where commande_id is in $commandesId
-
-
-
-
-
         return $this->render('profil/index.html.twig', [
-            'commandes' => $commandes,
-            'ligneCommandes' => $lignescommandes,
-            'manifestation' => $manifestation,
+            'manifestations' => $manifestation,
             'client' => $client,
             'controller_name' => 'ProfilController',
         ]);

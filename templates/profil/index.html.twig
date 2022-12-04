@@ -5,13 +5,6 @@
 
 {% block body %}
 
-    {{ dump(commandes) }}
-    {{ dump(ligneCommandes) }}
-    {{ dump(manifestation) }}
-
-    {% foreach lignes %}
-
-
 <div class="wrapper">
 
     <h1>Bonjour {{ client.clientPrenom }} {{ client.clientNom }}</h1>
@@ -40,35 +33,23 @@
         <div class="container">
             <h2>Vos commandes</h2>
             <div class="data">
-                <div class="commande">
-                    <a href="#">
-                        <p href="">Commande 1</p>
-                        <div class="control">
-                            <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt="Voir commande"></a>
-                            <a href="#"><img src="{{ asset('svg/file.svg') }}" alt="Voir billet"></a>
-                        </div>
-                    </a>
-                </div>
 
-                <div class="commande">
-                    <a href="#">
-                        <p href="">Commande 2</p>
-                        <div class="control">
-                            <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt="Voir commande"></a>
-                            <a href="#"><img src="{{ asset('svg/file.svg') }}" alt="Voir billet"></a>
-                        </div>
-                    </a>
-                </div>
+                {% for manifestation in manifestations %}
+                    <div class="commande">
+                        <a href="#">
+                            <p href="">
+                                {{ manifestation.manifTitre }}<br>
+                                {{ manifestation.manifDate }}<br>
+                                {{ manifestation.manifHoraire }}<br>
+                            </p>
+                            <div class="control">
+                                <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt="Voir commande"></a>
+                                <a href="#"><img src="{{ asset('svg/file.svg') }}" alt="Voir billet"></a>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
 
-                <div class="commande">
-                    <a href="#">
-                        <p href="">Commande 3</p>
-                        <div class="control">
-                            <a href="#"><img src="{{ asset('svg/voir.svg') }}" alt="Voir commande"></a>
-                            <a href="#"><img src="{{ asset('svg/file.svg') }}" alt="Voir billet"></a>
-                        </div>
-                    </a>
-                </div>
             </div>
             <a href="{{ path('app_client_commandes') }}" class="button">Voir plus</a>
         </div>
